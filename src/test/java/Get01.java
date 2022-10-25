@@ -1,7 +1,8 @@
 import io.restassured.response.Response;
-import org.junit.Test;
+import org.testng.annotations.Test;
 
-import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.*;
+
 
 public class Get01 {
     /*
@@ -36,6 +37,7 @@ public class Get01 {
         Status Line should be HTTP/1.1 200 OK
  */
 
+
     @Test
     public void get01() {
         //  i)  Set the URL,
@@ -49,5 +51,24 @@ public class Get01 {
 
         // iv) Do Assertion (dogrulama yapmak)
         response.then().assertThat().statusCode(200).contentType("application/json").statusLine("HTTP/1.1 200 OK");
+
+        // Status Code read to console
+        System.out.println("Status Code: " + response.getStatusCode());
+
+        // Content type read to console
+        System.out.println("Content type: " + response.getContentType());
+
+        // Status line read to console
+        System.out.println("Status line: " + response.getStatusLine());
+
+        // Header read to console
+        System.out.println("Header : " + response.getHeader("Server"));
+
+        // Headers read to console
+        System.out.println("Headers : " + response.getHeaders());
+
+        // Time read to console
+        System.out.println("Time : " + response.getTime());
+
     }
 }
