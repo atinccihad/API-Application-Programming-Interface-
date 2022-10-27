@@ -76,7 +76,6 @@ public class Get07 extends JsonplaceholderBaseUrl {
                 titles.stream().anyMatch(t -> t.equals("delectus aut autem")));
 
 
-
     }
 
 }
