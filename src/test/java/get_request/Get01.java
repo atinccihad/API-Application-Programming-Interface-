@@ -1,3 +1,6 @@
+package get_request;
+
+import base_url.JsonplaceholderBaseUrl;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
