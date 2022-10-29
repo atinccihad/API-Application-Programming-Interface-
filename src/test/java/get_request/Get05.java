@@ -1,7 +1,6 @@
 package get_request;
 
-import base_url.JsonplaceholderBaseUrl;
-import base_url.RestfulBaseUrl;
+import base_urls.RestfulBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
 
