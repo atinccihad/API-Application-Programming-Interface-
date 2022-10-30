@@ -21,22 +21,22 @@ public class Get04b extends RestfulBaseUrl {
       Among the data there should be someone whose firstname is "Almedin" and lastname is "Alikadic"
 
   */
-    //Set the Url
-    //Set The Expected Data
-    //Send The Request and Get The Response
-    //Do Assertion
+    // Set the Url
+    // Set The Expected Data
+    // Send The Request and Get The Response
+    // Do Assertion
     @Test
     public void get04() {
-        //Set the Url
+        // Set the Url
         spec.pathParam("first", "booking").queryParams("firstname", "Almedin", "lastname", "Alikadic");
 
-        //Set The Expected Data
+        // Set The Expected Data
 
-        //Send The Request and Get The Response
+        // Send The Request and Get The Response
         Response response = given().spec(spec).when().get("/{first}");
         response.prettyPrint();
 
-        //Do Assertion
+        // Do Assertion
         assertEquals(200, response.statusCode());
         assertTrue(response.asString().contains("bookingid"));
 
