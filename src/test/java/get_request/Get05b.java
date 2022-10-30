@@ -34,23 +34,23 @@ public class Get05b extends ReqresBaseUrl {
         }
 }
       */
-    //Set the Url
-    //Set The Expected Data
-    //Send The Request and Get The Response
-    //Do Assertion
+    // Set the Url
+    // Set The Expected Data
+    // Send The Request and Get The Response
+    // Do Assertion
 
     @Test
     public void get05() {
-        //Set the Url
+        // Set the Url
         spec.pathParams("first", "unknown", "second", 3);
 
-        //Set The Expected Data
+        // Set The Expected Data
 
-        //Send The Request and Get The Response
+        // Send The Request and Get The Response
         Response response = given().spec(spec).when().get("/{first}/{second}");
         response.prettyPrint();
 
-        //Do Assertion
+        // Do Assertion
         SoftAssert softAssert = new SoftAssert();
         JsonPath jsonPath = response.jsonPath();
 
