@@ -33,18 +33,16 @@ public class Get06b extends ReqresBaseUrl {
 
     @Test
     public void get06() {
-
-        //Set the Url
+        // Set the Url
         spec.pathParam("first", "unknown");
 
-        //Set The Expected Data
+        // Set The Expected Data
 
-        //Send The Request and Get The Response
+        // Send The Request and Get The Response
         Response response = given().spec(spec).when().get("/{first}");
         response.prettyPrint();
 
-
-        //Do Assertion
+        // Do Assertion
         assertEquals(200, response.statusCode());
         JsonPath jsonPath = response.jsonPath();
 
