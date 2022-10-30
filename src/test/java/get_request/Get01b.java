@@ -21,7 +21,6 @@ public class Get01b {
      */
     @Test
     public void get01() {
-
         // Set the URL
         String url = "https://reqres.in/api/users/3";
 
