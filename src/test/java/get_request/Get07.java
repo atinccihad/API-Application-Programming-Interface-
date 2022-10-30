@@ -31,7 +31,6 @@ public class Get07 extends JsonplaceholderBaseUrl {
 
     @Test
     public void get01() {
-
         // 1. Set The Url
         spec.pathParam("first", "todos");
 
@@ -67,7 +66,7 @@ public class Get07 extends JsonplaceholderBaseUrl {
         System.out.println("Id'si 5 ten kucuk olan title lar :" + titles);
 
         // Assert that "delectus aut autem" is one of the titles whose id is less than 5 ==> id si 5 den kucuk olan datalarin birinin
-        //basliginin "delectus aut autem" icerdigini dogrulayin
+        // basliginin "delectus aut autem" icerdigini dogrulayin
         assertTrue("Id'si 5 den Kucuk Olan Title'lardan herhangi bir tanesi delectus aut autem icermemektedir.",
                 titles.contains("delectus aut autem"));
 
