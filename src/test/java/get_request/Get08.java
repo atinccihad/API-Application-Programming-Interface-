@@ -30,10 +30,6 @@ public class Get08 extends JsonplaceholderBaseUrl {
                 "completed": false
             }
      */
-    // Set the Url
-    // Set The Expected Data
-    // Send The Request and Get The Response
-    // Do Assertion
 
     @Test
     public void get08() {
