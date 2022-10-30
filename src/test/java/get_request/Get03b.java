@@ -28,30 +28,30 @@ public class Get03b extends ReqresBaseUrl {
            "text" is "To keep ReqRes free, contributions towards server costs are appreciated!"
     */
 
-    //Set the Url
-    //Set The Expected Data
-    //Send The Request and Get The Response
-    //Do Assertion
+    // Set the Url
+    // Set The Expected Data
+    // Send The Request and Get The Response
+    // Do Assertion
     @Test
-    public void tes03(){
+    public void tes03() {
 
-    //Set the Url
-        spec.pathParams("first","users","second",2);
+        // Set the Url
+        spec.pathParams("first", "users", "second", 2);
 
-    //Set The Expected Data
+        // Set The Expected Data
 
-    //Send The Request and Get The Response
+        // Send The Request and Get The Response
         Response response = given().spec(spec).when().get("/{first}/{second}");
         response.prettyPrint();
 
-    //Do Assertion
+        // Do Assertion
         response.
                 then().
                 statusCode(200).
                 contentType(ContentType.JSON).
-                body("data.email",equalTo("janet.weaver@reqres.in"),
-                        "data.first_name",equalTo("Janet"),
-                        "data.last_name",equalTo("Weaver"),
-                        "support.text",equalTo("To keep ReqRes free, contributions towards server costs are appreciated!"));
+                body("data.email", equalTo("janet.weaver@reqres.in"),
+                        "data.first_name", equalTo("Janet"),
+                        "data.last_name", equalTo("Weaver"),
+                        "support.text", equalTo("To keep ReqRes free, contributions towards server costs are appreciated!"));
     }
 }
