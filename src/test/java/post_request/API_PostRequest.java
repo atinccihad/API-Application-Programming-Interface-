@@ -1,4 +1,4 @@
-package get_request;
+package post_request;
 
 public class API_PostRequest {
     /*
