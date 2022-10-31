@@ -55,7 +55,6 @@ public class Get08 extends JsonplaceholderBaseUrl {
         assertEquals(expectedData.get("id"),actualData.get("id"));
         assertEquals(expectedData.get("title"),actualData.get("title"));
         assertEquals(expectedData.get("completed"),actualData.get("completed"));
-
     }
 
 }
