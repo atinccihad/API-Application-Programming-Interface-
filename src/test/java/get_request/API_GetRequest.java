@@ -29,7 +29,7 @@ public class API_GetRequest {
         expBody.put("userId", 5);
         expBody.put("title", "optio dolor molestias sit");
 
-        // 3- save to Respons
+        // 3- save to Response
         Response response = given().when().get(url);
         //response.prettyPrint();
 

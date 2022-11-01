@@ -1,14 +1,13 @@
 package get_request;
 
-import base_urls.RestfulBaseUrl;
-import io.restassured.response.Response;
-import org.junit.Test;
+import base_urls.*;
+import io.restassured.response.*;
+import org.junit.*;
 
 import static io.restassured.RestAssured.*;
 import static org.junit.Assert.*;
 
 public class Get05 extends RestfulBaseUrl {
-
     /*
         Given
             https://restful-booker.herokuapp.com/booking
@@ -24,7 +23,7 @@ public class Get05 extends RestfulBaseUrl {
     public void get01(){
         // https://restful-booker.herokuapp.com/booking?firstname=Ali&lastname=Cengiz
         // 1. Set The URL
-        spec.pathParam("first","booking").queryParams("firstname","Ali","lastname","Cengiz");
+        spec.pathParam("first","booking").queryParams("firstname","Kimie","lastname","Jackie");
 
         // 2. Set The Expected Data
 
@@ -34,8 +33,7 @@ public class Get05 extends RestfulBaseUrl {
 
         // 4. Do Assertion
         assertEquals(200,response.getStatusCode());
-        assertTrue(response.asString().contains("bookingid"));
+        assertFalse(response.asString().contains("bookingid"));
     }
-
 
 }

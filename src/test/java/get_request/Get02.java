@@ -1,9 +1,9 @@
 package get_request;
 
-import io.restassured.response.Response;
-import org.junit.Test;
+import io.restassured.response.*;
+import org.junit.*;
 
-import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.*;
 import static org.junit.Assert.*;
 
 public class Get02 {
@@ -24,7 +24,7 @@ public class Get02 {
     */
 
     @Test
-    public void get01() {
+    public void get02() {
         //  i)  Set the URL
         String url = "https://restful-booker.herokuapp.com/booking/1";
 
@@ -35,12 +35,14 @@ public class Get02 {
 
         // iv) Do Assertion (dogrulama yapmak)
         response.then().assertThat().statusCode(404).statusLine("HTTP/1.1 404 Not Found");
+
         // Body NotFound iceriyor mu testi yapiliyor
         assertTrue(response.asString().contains("Not Found"));
+
         // Body Techproed icermedigi  testi yapiliyor
         assertFalse(response.asString().contains("TechProEd"));
-        // Server'in Cowboy olup olmadigini  test ediyoruz
-        assertEquals("Cowboy", response.getHeader("Server"));
 
+        // server in Cowboy olup olmadigini  test ediyoruz
+        assertEquals("Cowboy", response.getHeader("Server"));
     }
 }

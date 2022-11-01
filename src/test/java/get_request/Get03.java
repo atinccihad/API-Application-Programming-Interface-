@@ -1,6 +1,6 @@
 package get_request;
 
-import base_urls.JsonplaceholderBaseUrl;
+import base_urls.*;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
@@ -27,13 +27,13 @@ public class Get03 extends JsonplaceholderBaseUrl {
    */
 
     @Test
-    public void get01() {
+    public void get03() {
         // set the URL
         spec.pathParams("first", "todos", "second", 23);
 
         // Set The Expected Data(Put, Patch, Post)
 
-        //Send the request and Get Responce
+        // Send the request and Get Responce
         Response response = given().spec(spec).when().get("/{first}/{second}");
         // response.prettyPrint();
 

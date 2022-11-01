@@ -1,15 +1,14 @@
 package get_request;
 
-import base_urls.GoRestBaseUrl;
-import io.restassured.response.Response;
-import org.junit.Test;
-import test_data.GoRestTestData;
+import java.util.*;
 
-import java.util.HashMap;
-import java.util.Map;
+import base_urls.*;
+import io.restassured.response.*;
+import org.junit.*;
+import test_data.*;
 
-import static io.restassured.RestAssured.given;
-import static org.junit.Assert.assertEquals;
+import static io.restassured.RestAssured.*;
+import static org.junit.Assert.*;
 
 public class Get10 extends GoRestBaseUrl {
      /*
@@ -42,7 +41,7 @@ public class Get10 extends GoRestBaseUrl {
         spec.pathParams("first", "users", "second", 2986);
 
         GoRestTestData obj = new GoRestTestData();
-        Map<String,String> dataKeyMap = obj.dataKeyMap("Kanaka Jain", "kanaka_jain@stark.net", "male","active");
+        Map<String, String> dataKeyMap = obj.dataKeyMap("Kanaka Jain", "kanaka_jain@stark.net", "male", "active");
         Map<String, Object> expectedData = obj.expectedDataMethod(null, dataKeyMap);
         System.out.println(expectedData);
 

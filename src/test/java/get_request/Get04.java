@@ -9,7 +9,6 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
 public class Get04 extends JsonplaceholderBaseUrl {
-
     /*
         Given
             https://jsonplaceholder.typicode.com/todos
@@ -31,7 +30,6 @@ public class Get04 extends JsonplaceholderBaseUrl {
 
     @Test
     public void get01() {
-
         // 1. Set The Url
         spec.pathParam("first", "todos");
 

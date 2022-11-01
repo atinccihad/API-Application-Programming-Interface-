@@ -74,25 +74,24 @@ public class Get06 extends RestfulBaseUrl {
                 assertThat().
                 statusCode(200).
                 contentType(ContentType.JSON).
-                body("firstname", equalTo("Bradley"),
-                        "lastname", equalTo("Pearson"),
-                        "totalprice", equalTo(132),
-                        "depositpaid", equalTo(false),
-                        "bookingdates.checkin", equalTo("2022-10-27"),
-                        "bookingdates.checkout", equalTo("2022-11-07"),
-                        "additionalneeds", equalTo("None"));
+                body("firstname", equalTo("John"),
+                        "lastname", equalTo("Kowalsky"),
+                        "totalprice", equalTo(10150),
+                        "depositpaid", equalTo(true),
+                        "bookingdates.checkin", equalTo("2023-01-01"),
+                        "bookingdates.checkout", equalTo("2023-02-01"),
+                        "additionalneeds", equalTo("Lunch"));
 
         // 2. Yol : Jsonpath class'nın kullanimi
         JsonPath json = response.jsonPath();
 
-        assertEquals("Bradley", json.getString("firstname"));
-        assertEquals("Pearson", json.getString("lastname"));
-        assertEquals(132, json.getInt("totalprice"));
-        assertFalse(json.getBoolean("depositpaid"));
-        assertEquals("2022-10-27", json.getString("bookingdates.checkin"));
-        assertEquals("2022-11-07", json.getString("bookingdates.checkout"));
-        assertEquals("None", json.getString("additionalneeds"));
-
+        assertEquals("John", json.getString("firstname"));
+        assertEquals("Kowalsky", json.getString("lastname"));
+        assertEquals(10150, json.getInt("totalprice"));
+        assertTrue(json.getBoolean("depositpaid"));
+        assertEquals("2023-01-01", json.getString("bookingdates.checkin"));
+        assertEquals("2023-02-01", json.getString("bookingdates.checkout"));
+        assertEquals("Lunch", json.getString("additionalneeds"));
 
         // 3. Yol : Soft Assertion
         // softAssert class 3 adimda kullanilir
@@ -101,13 +100,14 @@ public class Get06 extends RestfulBaseUrl {
         SoftAssert softAssert = new SoftAssert();
 
         // ii) Do Assertion ( dogrulama Yapma)
-        softAssert.assertEquals(json.getString("firstname"), "Bradley", "First Name Hatali");
-        softAssert.assertEquals(json.getString("lastname"), "Pearson", "Last Name Hatali");
-        softAssert.assertEquals(json.getInt("totalprice"), 132, "Total Price Hatali");
-        softAssert.assertEquals(json.getBoolean("depositpaid"), false, "Depositpaid Hatali");
-        softAssert.assertEquals(json.getString("bookingdates.checkin"), "2022-10-27", "Check In Tarihi Hatali");
-        softAssert.assertEquals(json.getString("bookingdates.checkout"), "2022-11-07", "Check out Tarihi Hatali");
-        softAssert.assertEquals(json.getString("additionalneeds"), "None", "Additionalneeds Hatali");
+        softAssert.assertEquals(json.getString("firstname"), "John", "First Name Hatali");
+        softAssert.assertEquals(json.getString("lastname"), "Kowalsky", "Last Name Hatali");
+        softAssert.assertEquals(json.getInt("totalprice"), 10150, "Total Price Hatali");
+        softAssert.assertEquals(json.getBoolean("depositpaid"), true, "Depositpaid Hatali");
+        softAssert.assertEquals(json.getString("bookingdates.checkin"), "2023-01-01", "Check In Tarihi Hatali");
+        softAssert.assertEquals(json.getString("bookingdates.checkout"), "2023-02-01", "Check out Tarihi Hatali");
+        softAssert.assertEquals(json.getString("additionalneeds"), "Lunch", "Additionalneeds Hatali");
+
         softAssert.assertAll();
 
         /*
