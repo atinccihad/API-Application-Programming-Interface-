@@ -25,11 +25,14 @@ public class Get10 extends GoRestBaseUrl {
             {
         "meta": null,
         "data": {
-            "id": 2986,
-            "name": "Navin Talwar",
-            "email": "navin_talwar@mclaughlin.name",
-            "gender": "male",
-            "status": "inactive"
+           "meta": null,
+     "data": {
+     "id": 2986,
+     "name": "Kanaka Jain",
+     "email": "kanaka_jain@stark.net",
+     "gender": "male",
+     "status": "active"
+
               }
          }
      */
@@ -39,7 +42,7 @@ public class Get10 extends GoRestBaseUrl {
         spec.pathParams("first", "users", "second", 2986);
 
         GoRestTestData obj = new GoRestTestData();
-        Map<String, String> dataKeyMap = obj.dataKeyMap("Navin Talwar", "navin_talwar@mclaughlin.name", "male", "inactive");
+        Map<String,String> dataKeyMap = obj.dataKeyMap("Kanaka Jain", "kanaka_jain@stark.net", "male","active");
         Map<String, Object> expectedData = obj.expectedDataMethod(null, dataKeyMap);
         System.out.println(expectedData);
 
