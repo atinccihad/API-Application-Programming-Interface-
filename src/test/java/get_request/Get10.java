@@ -31,7 +31,6 @@ public class Get10 extends GoRestBaseUrl {
      "email": "kanaka_jain@stark.net",
      "gender": "male",
      "status": "active"
-
               }
          }
      */
