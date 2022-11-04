@@ -9,7 +9,7 @@ import pojos.BookingPojo;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class Get12Pojo extends RestfulBaseUrl {
+public class Get12_Pojo extends RestfulBaseUrl {
         /*
          Given
              https://restful-booker.herokuapp.com/booking/18
