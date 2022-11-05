@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.*;
 
-
 public class Get01 {
     /*
     1-Postman'i  manuel API testleri icin kullandik
@@ -22,12 +21,12 @@ public class Get01 {
          -And : Coklu islemlerde kullanacagiz
       c)Test kodlarimizi yazmaya baslayacagiz
          i) Set the URL,
-         ii)Set the expected Data (beklenen datanin olusturulmasi,Post ,Put ,Patch)
-         iii)Type code to send request(Talep göndermek icin kod yazimi
-         iv)Do Assertion(dogrulama yapmak)
+         ii) Set the expected Data (beklenen datanin olusturulmasi,Post ,Put ,Patch)
+         iii) Type code to send request(Talep göndermek icin kod yazimi
+         iv) Do Assertion(dogrulama yapmak)
     */
     /*
-   Given
+     Given
          https://restful-booker.herokuapp.com/booking/101
      When
         User sends a GET Request to the url
@@ -37,8 +36,7 @@ public class Get01 {
         Content Type should be JSON
      And
         Status Line should be HTTP/1.1 200 OK
- */
-
+   */
 
     @Test
     public void get01() {
