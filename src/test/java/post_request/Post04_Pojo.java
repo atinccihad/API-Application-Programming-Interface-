@@ -11,7 +11,7 @@ import pojos.BookingResponseBodyPojo;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class Post04Pojo extends RestfulBaseUrl {
+public class Post04_Pojo extends RestfulBaseUrl {
     /*
          Given
           1)  https://restful-booker.herokuapp.com/booking
