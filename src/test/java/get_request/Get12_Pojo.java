@@ -11,35 +11,35 @@ import static org.junit.Assert.assertEquals;
 
 public class Get12_Pojo extends RestfulBaseUrl {
         /*
-         Given
-             https://restful-booker.herokuapp.com/booking/18
-         When
-        I send GET Request to the URL
+        Given
+            https://restful-booker.herokuapp.com/booking/19
+        When
+          I send GET Request to the URL
        Then
-        Status code is 200
-    And
-        Response body is like:
-                            {
-                  "firstname": "Dane",
-                  "lastname": "Combs",
-                  "totalprice": 111,
-                  "depositpaid": true,
-                  "bookingdates": {
-                      "checkin": "2018-01-01",
-                      "checkout": "2019-01-01"
-    },
-    "additionalneeds": "Breakfast"
-}
+          Status code is 200
+      And
+          Response body is like:
+                       {
+                           "firstname": "Guoqiang",
+                            "lastname": "Liu",
+                            "totalprice": 111,
+                            "depositpaid": true,
+                            "bookingdates": {
+                                "checkin": "2018-01-01",
+                                "checkout": "2019-01-01"
+                            },
+                            "additionalneeds": "Breakfast"
+                        }
       */
 
     @Test
     public void get12Pojo() {
         // Set the Url
-        spec.pathParams("first", "booking", "second", 18);
+        spec.pathParams("first", "booking", "second", 19);
 
         // Set the Expected Data
         BookingDatesPojo bookingDatesPojo = new BookingDatesPojo("2018-01-01", "2019-01-01");
-        BookingPojo expectedData = new BookingPojo("Dane", "Combs", 111, true, bookingDatesPojo, "Breakfast");
+        BookingPojo expectedData = new BookingPojo("Guoqiang", "Liu", 111, true, bookingDatesPojo, "Breakfast");
         System.out.println("expectedData = " + expectedData);
 
         // Send the Request and Get the Response
@@ -60,7 +60,7 @@ public class Get12_Pojo extends RestfulBaseUrl {
         assertEquals(expectedData.getBookingdates().getCheckin(),actualData.getBookingdates().getCheckin());
         assertEquals(expectedData.getBookingdates().getCheckout(),actualData.getBookingdates().getCheckout());
 
-        // 2. Yol
+        // 2. Yol => Tavsiye edilen
         assertEquals(bookingDatesPojo.getCheckin(),actualData.getBookingdates().getCheckin());
         assertEquals(bookingDatesPojo.getCheckout(),actualData.getBookingdates().getCheckout());
     }
