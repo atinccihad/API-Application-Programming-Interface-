@@ -5,9 +5,12 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
 import pojos.DummyRestApiDataPojo;
+import pojos.DummyRestApiResponseBodyPojo;
 import pojos.JsonPlaceHolderPojo;
+import utils.ObjectMapperUtils;
 
 import static io.restassured.RestAssured.given;
+import static org.junit.Assert.assertEquals;
 
 public class Post07 extends DummyRestapiBaseUrl {
     /*
@@ -77,14 +80,22 @@ public class Post07 extends DummyRestapiBaseUrl {
         spec.pathParams("first", "create");
 
         // Set the Expected Data
-        DummyRestApiDataPojo expectedData = new DummyRestApiDataPojo("Tom Hanks", 111111,23,"Perfect image");
+        DummyRestApiDataPojo expectedData = new DummyRestApiDataPojo("Tom Hanks", 111111, 23, "Perfect image");
         System.out.println("expectedData = " + expectedData);
 
         // Send the Request and Get the Response
         Response response = given().spec(spec).contentType(ContentType.JSON).body(expectedData).when().post("/{first}");
         response.prettyPrint();
 
+        // Do Assertion
+        DummyRestApiResponseBodyPojo actualData = ObjectMapperUtils.convertJsonToJava(response.asString(), DummyRestApiResponseBodyPojo.class);
+        System.out.println("actualData= " + actualData);
 
-
+        assertEquals(200, response.statusCode());
+        assertEquals(expectedData.getEmployee_name(), actualData.getData().getEmployee_name());
+        assertEquals(expectedData.getEmployee_salary(), actualData.getData().getEmployee_salary());
+        assertEquals(expectedData.getEmployee_age(), actualData.getData().getEmployee_age());
+        assertEquals(expectedData.getProfile_image(), actualData.getData().getProfile_image());
+        
     }
 }
