@@ -3,6 +3,7 @@ package get_request;
 import base_urls.RestfulBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
+import org.testng.asserts.SoftAssert;
 import pojos.BookingDatesPojo;
 import pojos.BookingPojo;
 import utils.ObjectMapperUtils;
@@ -11,7 +12,6 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
 public class Get15 extends RestfulBaseUrl {
-
     /*
         Given
 	            https://restful-booker.herokuapp.com/booking/22
@@ -48,6 +48,22 @@ public class Get15 extends RestfulBaseUrl {
         // Do Assertion
         BookingPojo actualData = ObjectMapperUtils.convertJsonToJava(response.asString(), BookingPojo.class);
 
+        // Soft Assertion
+        SoftAssert softAssert = new SoftAssert();
+
+        softAssert.assertEquals(200, response.statusCode());
+        softAssert.assertEquals(actualData.getFirstname(), expectedData.getFirstname(), "firstname fail!");
+        softAssert.assertEquals(actualData.getLastname(), expectedData.getLastname(), "lastname fail!");
+        softAssert.assertEquals(actualData.getTotalprice(), expectedData.getTotalprice(), "totalPrice fail!");
+        softAssert.assertEquals(actualData.getDepositpaid(), expectedData.getDepositpaid(), "depositPaid fail!");
+        softAssert.assertEquals(actualData.getAdditionalneeds(), expectedData.getAdditionalneeds(), "additionalNeeds fail!");
+
+        softAssert.assertEquals(actualData.getBookingdates().getCheckin(), bookingDatesPojo.getCheckin(), "checkin fail!");
+        softAssert.assertEquals(actualData.getBookingdates().getCheckout(), bookingDatesPojo.getCheckout(), "checkout fail!");
+
+        softAssert.assertAll();
+
+        // Hard Assertion
         assertEquals(200, response.statusCode());
         assertEquals(expectedData.getFirstname(), actualData.getFirstname());
         assertEquals(expectedData.getLastname(), actualData.getLastname());
@@ -57,5 +73,7 @@ public class Get15 extends RestfulBaseUrl {
 
         assertEquals(bookingDatesPojo.getCheckout(), actualData.getBookingdates().getCheckout());
         assertEquals(bookingDatesPojo.getCheckin(), actualData.getBookingdates().getCheckin());
+
+
     }
 }
