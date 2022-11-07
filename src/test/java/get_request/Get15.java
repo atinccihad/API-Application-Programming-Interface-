@@ -74,6 +74,5 @@ public class Get15 extends RestfulBaseUrl {
         assertEquals(bookingDatesPojo.getCheckout(), actualData.getBookingdates().getCheckout());
         assertEquals(bookingDatesPojo.getCheckin(), actualData.getBookingdates().getCheckin());
 
-
     }
 }
