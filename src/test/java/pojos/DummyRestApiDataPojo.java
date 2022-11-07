@@ -44,7 +44,6 @@ public class DummyRestApiDataPojo {
         this.profile_image = profile_image;
     }
 
-
     @Override
     public String toString() {
         return "DummyRestApiDataPojo{" +
