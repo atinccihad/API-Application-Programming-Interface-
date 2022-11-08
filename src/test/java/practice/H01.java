@@ -27,6 +27,7 @@ public class H01 extends AutomationBaseUrl {
         response.then().statusCode(200).contentType("text/html; charset=utf-8").statusLine("HTTP/1.1 200 OK");
         // And Content Type should be "text/html; charset=utf-8"
         // And Status Line should be HTTP/1.1 200 OK
+
         // And Number of H&M brands must be equal to Polo(H&M marka sayısı Polo marka sayısına eşit olmalı)
 
     }
