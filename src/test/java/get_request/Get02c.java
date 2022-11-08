@@ -1,6 +1,5 @@
 package get_request;
 
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
 
@@ -27,7 +26,7 @@ public class Get02c {
         // 2- Beklenen sonuc(expected result) olusturulur
         // 3- request gonder
         Response response = given().accept("application/json").when().get(url);
-        response.prettyPrint();
+        // response.prettyPrint();
 
         // 4- actual result olustur
         // 5- Dogrulama yap(Do Assertion)
@@ -55,7 +54,7 @@ public class Get02c {
         // 2- Beklenen sonuc(expected result) olusturulur
         // 3- request gonder
         Response response = given().accept("application/json").when().get(url);
-        response.prettyPrint();
+        // response.prettyPrint();
 
         // 4- actual result olustur
         // 5- Dogrulama yap(Do Assertion)
