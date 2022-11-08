@@ -59,7 +59,7 @@ public class Get03c {
                 */
         response.then()
                 .assertThat()
-                .contentType(ContentType.JSON)
+                .contentType("application/json")
                 .body("firstname", equalTo("Eric"),
                         "lastname", equalTo("Jones"),
                         "totalprice", equalTo(565),
