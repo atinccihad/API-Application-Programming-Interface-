@@ -19,7 +19,7 @@ public class Get01c {
      */
 
     @Test
-    public void test01() {
+    public void test01c() {
         // 1- api testi yaparken ilk olarak url(endpoint) belirlenmeli
         String url = "https://restful-booker.herokuapp.com/booking/2";
 
