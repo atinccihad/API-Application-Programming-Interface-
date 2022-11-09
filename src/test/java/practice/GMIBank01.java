@@ -1,10 +1,19 @@
 package practice;
 
 import io.restassured.response.Response;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Test;
+import pojos.Customer;
 import utilities.GMIBankBaseUrl;
+import utilities.ReadText;
+import utilities.WriteToText;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import static io.restassured.RestAssured.given;
+import static org.junit.Assert.assertTrue;
 
 public class GMIBank01 extends GMIBankBaseUrl {
        /*
@@ -18,14 +27,41 @@ public class GMIBank01 extends GMIBankBaseUrl {
     */
 
     @Test
-    public void test10() {
-        spec01.pathParams("bir", "tp-customers", "iki", 110452);
+    public void test10() throws IOException {
+        Customer[] customers;
+        spec01.pathParams("bir", "tp-customers");
 
         Response response = given().spec(spec01).headers("Authorization", "Bearer " + generateToken())
                 .when()
-                .get("/{bir}/{iki}");
+                .get("/{bir}");
 
         response.prettyPrint();
+
+        //  1) Tüm Customer bilgilerini ekrana yazdırın.
+        ObjectMapper obj = new ObjectMapper();
+        customers = obj.readValue(response.asString(), Customer[].class);
+
+        for (int i = 0; i < customers.length; i++) {
+            System.out.println(customers[i]);
+        }
+
+        // 2) Tüm Customer SSN lerini ekrana yazdırın.
+        for (int i = 0; i < customers.length; i++) {
+            System.out.println("SSN ler: " + customers[i].getSsn());
+        }
+
+        // 3) Tüm Customer SSN lerini text dosyası olarak kaydedin
+        String filePath = "src/test/java/practice/SSNNumbers.txt";
+        WriteToText.saveSSNData(filePath, customers);
+
+        // 4) Olusturduğunuz text dosyasından  SSNleri okuyarak "531-95-8437", "049-43-2360", "123-34-3434" SSNlerinin olduğunu doğrulayın
+        List<String> expectedSSN = new ArrayList<>();
+        expectedSSN.add("531-95-8437");
+        expectedSSN.add("049-43-2360");
+        expectedSSN.add("123-34-3434");
+
+        List<String> actualSSN = ReadText.readCustomerSSNList(filePath);
+        assertTrue("SSN's fail!", actualSSN.containsAll(expectedSSN));
 
     }
 }
