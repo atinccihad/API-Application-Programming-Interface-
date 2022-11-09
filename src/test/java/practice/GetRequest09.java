@@ -54,7 +54,6 @@ public class GetRequest09 extends GMIBankBaseUrl {
                 .when()
                 .get("/{bir}/{iki}");
 
-
         //response.prettyPrint();
         Customer actualData = response.as(Customer.class);
         System.out.println("actualData = " + actualData);
