@@ -76,6 +76,6 @@ public class GetRequest08 extends GMIBankBaseUrl {
         assertEquals("middleInitial fail!", expectedData.get("middleInitial"), actualData.get("middleInitial"));
         assertEquals("mobilePhoneNumber fail!", expectedData.get("mobilePhoneNumber"), actualData.get("mobilePhoneNumber"));
         assertEquals("city fail!", expectedData.get("city"), actualData.get("city"));
-        assertEquals("ssn dail!", expectedData.get("ssn"), actualData.get("ssn"));
+        assertEquals("ssn fail!", expectedData.get("ssn"), actualData.get("ssn"));
     }
 }

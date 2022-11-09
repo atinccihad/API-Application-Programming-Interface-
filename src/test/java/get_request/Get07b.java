@@ -4,16 +4,14 @@ package get_request;
 import base_urls.AutoBaseUrl;
 import io.restassured.path.json.*;
 import io.restassured.response.*;
-import org.junit.Assert;
 import org.junit.Test;
-import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 
 import static io.restassured.RestAssured.*;
 import static org.junit.Assert.*;
 
-public class Q01 extends AutoBaseUrl {
+public class Get07b extends AutoBaseUrl {
     /*
 Given
     https://automationexercise.com/api/productsList

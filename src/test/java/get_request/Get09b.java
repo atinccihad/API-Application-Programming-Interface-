@@ -8,7 +8,7 @@ import org.junit.Test;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class Q02 extends AutoBaseUrl {
+public class Get09b extends AutoBaseUrl {
 
     @Test
     public void get02() {
