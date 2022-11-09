@@ -8,8 +8,6 @@ public class DummyRestapiBaseUrl {
     protected RequestSpecification spec;
 
     @Before
-    public void setup() {
-        spec = new RequestSpecBuilder().setBaseUri("https://dummy.restapiexample.com/api/v1").build();
-    }
+    public void setup() {spec = new RequestSpecBuilder().setBaseUri("https://dummy.restapiexample.com/api/v1").build();}
 
 }
