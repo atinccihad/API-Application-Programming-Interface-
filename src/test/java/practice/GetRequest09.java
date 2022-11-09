@@ -8,23 +8,21 @@ import pojos.Country;
 import pojos.Customer;
 import pojos.User;
 import utilities.GMIBankBaseUrl;
+import utilities.JsonUtil;
 
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
 public class GetRequest09 extends GMIBankBaseUrl {
-
         /*
         http://www.gmibank.com/api/tp-customers/110452
          */
-
     @Test
     public void test09() {
-
         spec01.pathParams("bir", "tp-customers", "iki", 110452);
 
-        //EXPECTED DATA
+        // EXPECTED DATA
         /*
             /*
         "user": {
@@ -40,7 +38,7 @@ public class GetRequest09 extends GMIBankBaseUrl {
     }
      */
 
-        //Account [] accounts;
+        // Account [] accounts;
         User user = new User(110016, "leopoldo.reinger", "Jasmine", "Stehr",
                 "marni.zboncak@yahoo.com", true, "en", null, null);
 
@@ -59,11 +57,19 @@ public class GetRequest09 extends GMIBankBaseUrl {
 
         //response.prettyPrint();
         Customer actualData = response.as(Customer.class);
-        System.out.println(actualData);
+        System.out.println("actualData = " + actualData);
 
         assertEquals(expectedData.getId(), actualData.getId());
         assertEquals(expectedData.getUser().getLogin(), actualData.getUser().getLogin());
         assertEquals(expectedData.getCountry().getName(), actualData.getCountry().getName());
+
+        // Object Mapper
+        Customer actualData2 = JsonUtil.convertJsonToJava(response.asString(), Customer.class);
+        System.out.println("actualData2 = " + actualData2);
+
+        assertEquals(expectedData.getId(),actualData2.getId());
+        assertEquals(expectedData.getUser().getLogin(),actualData2.getUser().getLogin());
+        assertEquals(expectedData.getCountry().getName(),actualData2.getCountry().getName());
 
     }
 }
