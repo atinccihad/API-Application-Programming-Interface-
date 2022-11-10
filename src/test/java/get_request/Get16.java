@@ -24,7 +24,6 @@ public class Get16 extends DummyRestapiBaseUrl {
                     v) The name of the lowest age is "Tatyana Fitzpatrick"
                    vi) Total salary of all employees is 6,644,770
     */
-
     /*
     Given
         https://dummy.restapiexample.com/api/v1/employees
@@ -66,6 +65,6 @@ public class Get16 extends DummyRestapiBaseUrl {
         // The name of the lowest age is "Tatyana Fitzpatrick"
         String lowestAgedEmployee = response.jsonPath().getString("data.findAll{it.employee_age == " + ages.get(0) + "}.employee_name");
         System.out.println("lowestAgedEmployee = " + lowestAgedEmployee);
-
     }
+
 }
