@@ -1,0 +1,88 @@
+package get_request;
+
+import base_urls.DummyRestapiBaseUrl;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import static io.restassured.RestAssured.given;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+public class Get10b extends DummyRestapiBaseUrl {
+     /*
+    https://dummy.restapiexample.com/api/v1/employees
+    url'ine bir istek gonderildiginde
+    status kodunun 200,
+    gelen body de
+    1) 10'dan buyuk tum id'leri ekrana yazdirin ve 10'dan buyuk 14 id oldugunu,
+    2) 30'dan kucuk tum yaslari ekrana yazdirin ve bu yaslarin icerisinde en buyuk yasin 23 oldugunu
+    3) Maasi 350000 den buyuk olan tum employe name'leri ekrana yazdirin ve bunlarin icerisinde "Charde Marshall" oldugunu test edin
+     */
+
+    @Test
+    public void test10b() {
+        spec.pathParam("parametre1", "employees");
+        Response response = given()
+                .accept("application/json")
+                .spec(spec)
+                .when()
+                .get("/{parametre1}");
+
+        JsonPath jsonPath = response.jsonPath();
+        // status kodunun 200
+        assertEquals("response.statusCode 200 degil!", 200, response.getStatusCode());
+
+        // 1) 10'dan buyuk tum id'leri ekrana yazdirin ve 10'dan buyuk 14 id oldugunu,
+        int count = 0;
+        List<Integer>ids = jsonPath.getList("data.findAll{it.id>10}.id");
+        /*
+        List<Integer> ids = jsonPath.getList("data.id");
+        for (int i = 0; i < ids.size(); i++) {
+            if (ids.get(i) > 10) {
+                count++;
+                System.out.println(count + ". 10'dan buyuk "+count+". id: " + ids.get(i));
+            }
+        }
+        */
+        System.out.println("10'dan buyuk id'ler: " + ids);
+        assertEquals("10'dan buyuk 14 id bulunmadi!", 14, ids.size());
+
+        // 2) 30'dan kucuk tum yaslari ekrana yazdirin ve bu yaslarin icerisinde en buyuk yasin 23 oldugunu
+        int enBuyukYas = 0;
+        /*
+        List<Integer> yaslar = jsonPath.getList("data.employee_age");
+        for (int i = 0; i < yaslar.size(); i++) {
+            if (yaslar.get(i) < 30) {
+
+                if (yaslar.get(i) > enBuyukYas) {
+                    System.out.println(yaslar.get(i));
+                    enBuyukYas = yaslar.get(i);
+                }
+            }
+        }*/
+        List<Integer>yaslar = jsonPath.getList("data.findAll{it.employee_age<30}.employee_age");
+        System.out.println("yaslar = " + yaslar);
+        Collections.sort(yaslar);
+        enBuyukYas = yaslar.get(yaslar.size()-1);
+        System.out.println("30'dan kucuk en buyuk yas: " + enBuyukYas);
+        assertEquals("30'dan kucuk en buyuk yas: 23 degil!", 23,enBuyukYas);
+
+        // 3) Maasi 350000 den buyuk olan tum employe name'leri ekrana yazdirin ve bunlarin icerisinde "Charde Marshall" oldugunu test edin
+        List<Integer> maaslar = jsonPath.getList("data.employee_salary");
+        System.out.println("maaslar = " + maaslar);
+        List<String> namesAll = jsonPath.getList("data.employee_name");
+        List<String> names = new ArrayList<>();
+        for (int i = 0; i < maaslar.size(); i++) {
+            if (maaslar.get(i) > 350000) {
+                names.add(namesAll.get(i));
+            }
+        }
+        System.out.println("names = " + names);
+        assertTrue("employe name'ler icerisinde 'Charde Marshall' bulunmuyor!", names.contains("Charde Marshall"));
+    }
+}
