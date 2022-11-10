@@ -2,7 +2,8 @@ package get_request;
 
 import base_urls.DummyRestapiBaseUrl;
 import io.restassured.response.Response;
-import org.testng.annotations.Test;
+import org.junit.Test;
+
 
 import java.util.Collections;
 import java.util.List;
@@ -42,12 +43,14 @@ public class Get16 extends DummyRestapiBaseUrl {
     And
         v) The name of the lowest age is "Tatyana Fitzpatrick"
     And
-       vi) Total salary of all employees is 6,644,770
+       vi) Total salary of all employees is 6644770
      */
 
     @Test
     public void get16() {
-        Response response = given().when().get("https://dummy.restapiexample.com/api/v1/employees");
+        spec.pathParam("first","employees");
+        Response response = given().spec(spec).when().get("/{first}");
+
         response.prettyPrint();
 
         // There are 24 employees, "Tiger Nixon" and "Garrett Winters" are among the employees
@@ -65,6 +68,30 @@ public class Get16 extends DummyRestapiBaseUrl {
         // The name of the lowest age is "Tatyana Fitzpatrick"
         String lowestAgedEmployee = response.jsonPath().getString("data.findAll{it.employee_age == " + ages.get(0) + "}.employee_name");
         System.out.println("lowestAgedEmployee = " + lowestAgedEmployee);
+
+        assertEquals("[Tatyana Fitzpatrick]", lowestAgedEmployee);
+
+        // Total salary of all employees is 6,644,770
+        List<Integer> salaries = response.jsonPath().getList("data.employee_salary");
+        System.out.println("salaries = " + salaries);
+
+        // 1. yol
+        int sum = 0;
+        for (int w : salaries) {
+            sum += w;
+        }
+        System.out.println("sum = " + sum);
+        assertEquals(6644770, sum);
+
+        // 2. yol(functional programing)
+        int sum2 = salaries.stream().reduce(0, Integer::sum);
+        System.out.println("sum2 = " + sum2);
+        assertEquals(6644770, sum2);
+
+        // 3. yol(functional programing)
+        int sum3 = salaries.stream().reduce(0, Math::addExact);
+        System.out.println("sum3 = " + sum3);
+        assertEquals(6644770, sum3);
     }
 
 }
