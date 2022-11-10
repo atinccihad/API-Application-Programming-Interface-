@@ -31,7 +31,7 @@ public class PostRequest extends GMIBankBaseUrl {
         CountryPost actualData = response.as(CountryPost.class);
         System.out.println("actualData = " + actualData);
 
-        //Doğrulama Yaptık
+        // Doğrulama yapalim
         Assert.assertEquals(countryPost.getName(), actualData.getName());
     }
 }
