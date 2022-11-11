@@ -39,50 +39,21 @@ public class Get10b extends DummyRestapiBaseUrl {
 
         // 1) 10'dan buyuk tum id'leri ekrana yazdirin ve 10'dan buyuk 14 id oldugunu,
         int count = 0;
-        List<Integer>ids = jsonPath.getList("data.findAll{it.id>10}.id");
-        /*
-        List<Integer> ids = jsonPath.getList("data.id");
-        for (int i = 0; i < ids.size(); i++) {
-            if (ids.get(i) > 10) {
-                count++;
-                System.out.println(count + ". 10'dan buyuk "+count+". id: " + ids.get(i));
-            }
-        }
-        */
+        List<Integer> ids = jsonPath.getList("data.findAll{it.id>10}.id");
         System.out.println("10'dan buyuk id'ler: " + ids);
         assertEquals("10'dan buyuk 14 id bulunmadi!", 14, ids.size());
 
         // 2) 30'dan kucuk tum yaslari ekrana yazdirin ve bu yaslarin icerisinde en buyuk yasin 23 oldugunu
-        int enBuyukYas = 0;
-        /*
-        List<Integer> yaslar = jsonPath.getList("data.employee_age");
-        for (int i = 0; i < yaslar.size(); i++) {
-            if (yaslar.get(i) < 30) {
-
-                if (yaslar.get(i) > enBuyukYas) {
-                    System.out.println(yaslar.get(i));
-                    enBuyukYas = yaslar.get(i);
-                }
-            }
-        }*/
-        List<Integer>yaslar = jsonPath.getList("data.findAll{it.employee_age<30}.employee_age");
-        System.out.println("yaslar = " + yaslar);
+        List<Integer> yaslar = jsonPath.getList("data.findAll{it.employee_age<30}.employee_age");
+        System.out.println("30'dan kucuk yaslar = " + yaslar);
         Collections.sort(yaslar);
-        enBuyukYas = yaslar.get(yaslar.size()-1);
-        System.out.println("30'dan kucuk en buyuk yas: " + enBuyukYas);
-        assertEquals("30'dan kucuk en buyuk yas: 23 degil!", 23,enBuyukYas);
+        System.out.println("30'dan kucuk en buyuk yas: " + yaslar.get(yaslar.size() - 1));
+        assertEquals("30'dan kucuk en buyuk yas: 23 degil!", (Integer) 23, yaslar.get(yaslar.size() - 1));
 
-        // 3) Maasi 350000 den buyuk olan tum employe name'leri ekrana yazdirin ve bunlarin icerisinde "Charde Marshall" oldugunu test edin
-        List<Integer> maaslar = jsonPath.getList("data.employee_salary");
-        System.out.println("maaslar = " + maaslar);
-        List<String> namesAll = jsonPath.getList("data.employee_name");
-        List<String> names = new ArrayList<>();
-        for (int i = 0; i < maaslar.size(); i++) {
-            if (maaslar.get(i) > 350000) {
-                names.add(namesAll.get(i));
-            }
-        }
-        System.out.println("names = " + names);
-        assertTrue("employe name'ler icerisinde 'Charde Marshall' bulunmuyor!", names.contains("Charde Marshall"));
+        // 3) Maasi 350000 den buyuk olan tum employe name'leri ekrana yazdirin ve bunlarin icerisinde "Brielle Williamson" oldugunu test edin
+        Integer beklenenMaas = 350000;
+        List<String> maasaGoreIsımListesi = jsonPath.getList("data.findAll{it.employee_salary>350000}.employee_name");
+        System.out.println("Maasi " + beklenenMaas + "'den buyuk olan isimListesi = " + maasaGoreIsımListesi);
+        assertTrue("employe name'ler icerisinde 'Brielle Williamson' bulunmuyor!", maasaGoreIsımListesi.contains("Brielle Williamson"));
     }
 }
