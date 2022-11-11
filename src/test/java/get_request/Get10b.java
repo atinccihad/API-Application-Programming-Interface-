@@ -34,6 +34,14 @@ public class Get10b extends DummyRestapiBaseUrl {
                 .get("/{parametre1}");
 
         JsonPath jsonPath = response.jsonPath();
+        /*
+        Groovy dili javanın alt dilidir.
+        Biz bu dil yardimi ile loop kullanmadan gelen response'daki degerleri
+        bir sarta bagli olarak listeye yazdirabiliyoruz.
+
+        data.findAll{it.id>10}.id
+        Ust satirdaki 'it' java'da kullandigimiz this. ile benzer ozellikte calisir
+         */
         // status kodunun 200
         assertEquals("response.statusCode 200 degil!", 200, response.getStatusCode());
 
@@ -51,7 +59,7 @@ public class Get10b extends DummyRestapiBaseUrl {
         assertEquals("30'dan kucuk en buyuk yas: 23 degil!", (Integer) 23, yaslar.get(yaslar.size() - 1));
 
         // 3) Maasi 350000 den buyuk olan tum employe name'leri ekrana yazdirin ve bunlarin icerisinde "Brielle Williamson" oldugunu test edin
-        Integer beklenenMaas = 350000;
+        int beklenenMaas = 350000;
         List<String> maasaGoreIsımListesi = jsonPath.getList("data.findAll{it.employee_salary>"+beklenenMaas+"}.employee_name");
         System.out.println("Maasi " + beklenenMaas + "'den buyuk olan isimListesi = " + maasaGoreIsımListesi);
         assertTrue("employe name'ler icerisinde 'Brielle Williamson' bulunmuyor!", maasaGoreIsımListesi.contains("Brielle Williamson"));
