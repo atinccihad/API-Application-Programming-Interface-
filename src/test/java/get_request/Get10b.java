@@ -52,7 +52,7 @@ public class Get10b extends DummyRestapiBaseUrl {
 
         // 3) Maasi 350000 den buyuk olan tum employe name'leri ekrana yazdirin ve bunlarin icerisinde "Brielle Williamson" oldugunu test edin
         Integer beklenenMaas = 350000;
-        List<String> maasaGoreIsımListesi = jsonPath.getList("data.findAll{it.employee_salary>350000}.employee_name");
+        List<String> maasaGoreIsımListesi = jsonPath.getList("data.findAll{it.employee_salary>"+beklenenMaas+"}.employee_name");
         System.out.println("Maasi " + beklenenMaas + "'den buyuk olan isimListesi = " + maasaGoreIsımListesi);
         assertTrue("employe name'ler icerisinde 'Brielle Williamson' bulunmuyor!", maasaGoreIsımListesi.contains("Brielle Williamson"));
     }
