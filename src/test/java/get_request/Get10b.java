@@ -39,7 +39,7 @@ public class Get10b extends DummyRestapiBaseUrl {
         Biz bu dil yardimi ile loop kullanmadan gelen response'daki degerleri
         bir sarta bagli olarak listeye yazdirabiliyoruz.
 
-        data.findAll{it.id>10}.id
+        jsonPath.getList("data.findAll{it.id>10}.id");
         Ust satirdaki 'it' java'da kullandigimiz this. ile benzer ozellikte calisir
          */
         // status kodunun 200
