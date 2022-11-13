@@ -35,30 +35,30 @@ actualDataMap = {firstname=D1AC2, additionalneeds=D2B3D, bookingdates={checkin=2
     @Test
     public void test12b() {
         // Set the Url
-        spec.pathParams("parametre1","booking","parametre2",23);
+        spec.pathParams("parametre1", "booking", "parametre2", 23);
 
         // Get the ExpectedData
         HerokuappTestData expectedObje = new HerokuappTestData();
-        HashMap<String,Object>expectedDataMap = expectedObje.setupTestData();
+        HashMap<String, Object> expectedDataMap = expectedObje.setupTestData();
         System.out.println("expectedDataMap = " + expectedDataMap);
 
         // Send the request get the response
         Response response = given().accept("application/json").spec(spec).when().get("/{parametre1}/{parametre2}");
         response.prettyPrint();
 
-        HashMap <String,Object>actualDataMap = response.as(HashMap.class);
+        HashMap<String, Object> actualDataMap = response.as(HashMap.class);
         System.out.println("actualDataMap = " + actualDataMap);
 
         // Do assertion
-        assertEquals("statusCode !",200,response.getStatusCode());
+        assertEquals("statusCode !", 200, response.getStatusCode());
 
-        assertEquals("firstname'ler farkli!",expectedDataMap.get("firstname"),actualDataMap.get("firstname"));
-        assertEquals("lastname'ler farkli!",expectedDataMap.get("lastname"),actualDataMap.get("lastname"));
-        assertEquals("totalprice'ler farkli!",expectedDataMap.get("totalprice"),actualDataMap.get("totalprice"));
-        assertEquals("additionalneeds'ler farkli!",expectedDataMap.get("additionalneeds"),actualDataMap.get("additionalneeds"));
+        assertEquals("firstname'ler farkli!", expectedDataMap.get("firstname"), actualDataMap.get("firstname"));
+        assertEquals("lastname'ler farkli!", expectedDataMap.get("lastname"), actualDataMap.get("lastname"));
+        assertEquals("totalprice'ler farkli!", expectedDataMap.get("totalprice"), actualDataMap.get("totalprice"));
+        assertEquals("additionalneeds'ler farkli!", expectedDataMap.get("additionalneeds"), actualDataMap.get("additionalneeds"));
 
-        assertEquals("bookingdates bolumundeki checkin degeri farkli!",((Map)expectedDataMap.get("bookingdates")).get("checkin"),((Map)actualDataMap.get("bookingdates")).get("checkin"));
-        assertEquals("bookingdates bolumundeki checkout degeri farkli!",((Map)expectedDataMap.get("bookingdates")).get("checkout"),((Map)actualDataMap.get("bookingdates")).get("checkout"));
+        assertEquals("bookingdates bolumundeki checkin degeri farkli!", ((Map) expectedDataMap.get("bookingdates")).get("checkin"), ((Map) actualDataMap.get("bookingdates")).get("checkin"));
+        assertEquals("bookingdates bolumundeki checkout degeri farkli!", ((Map) expectedDataMap.get("bookingdates")).get("checkout"), ((Map) actualDataMap.get("bookingdates")).get("checkout"));
 
     }
 }
