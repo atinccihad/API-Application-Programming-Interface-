@@ -24,8 +24,8 @@ public class HerokuappTestData {
 
         HashMap<String, Object> expectedData = new HashMap<String, Object>();
 
-        expectedData.put("firstname", "Edgar");
-        expectedData.put("lastname", "Liu");
+        expectedData.put("firstname", "Alex");
+        expectedData.put("lastname", "Sevilla");
         expectedData.put("totalprice", 111);
         expectedData.put("depositpaid", true);
         expectedData.put("bookingdates", bookingdates);
