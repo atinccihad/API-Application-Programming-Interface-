@@ -2,6 +2,7 @@ package get_request;
 
 
 import base_urls.HerokuAppBaseUrl;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
 import test_data.HerokuappTestData;
@@ -43,6 +44,7 @@ actualDataMap = {firstname=D1AC2, additionalneeds=D2B3D, bookingdates={checkin=2
         System.out.println("expectedDataMap = " + expectedDataMap);
 
         // Send the request get the response
+        // *** 1. yol de serialization ***
         Response response = given().accept("application/json").spec(spec).when().get("/{parametre1}/{parametre2}");
         response.prettyPrint();
 
@@ -59,6 +61,15 @@ actualDataMap = {firstname=D1AC2, additionalneeds=D2B3D, bookingdates={checkin=2
 
         assertEquals("bookingdates bolumundeki checkin degeri farkli!", ((Map) expectedDataMap.get("bookingdates")).get("checkin"), ((Map) actualDataMap.get("bookingdates")).get("checkin"));
         assertEquals("bookingdates bolumundeki checkout degeri farkli!", ((Map) expectedDataMap.get("bookingdates")).get("checkout"), ((Map) actualDataMap.get("bookingdates")).get("checkout"));
+
+        // *** 2. yol JsonPath ***
+        JsonPath jsonPath = response.jsonPath();
+        assertEquals("firstname'ler farkli!", expectedDataMap.get("firstname"), jsonPath.getString("firstname"));
+        assertEquals("lastname'ler farkli!", expectedDataMap.get("lastname"), jsonPath.getString("lastname"));
+        assertEquals("totalprice'ler farkli!", expectedDataMap.get("totalprice"), jsonPath.getInt("totalprice"));
+        assertEquals("depositpaid'ler farkli!", expectedDataMap.get("depositpaid"), jsonPath.getBoolean("depositpaid"));
+        assertEquals("bookingdates bolumundeki checkin degeri farkli!", ((Map) expectedDataMap.get("bookingdates")).get("checkin"), (jsonPath.getString("bookingdates.checkin")));
+        assertEquals("bookingdates bolumundeki checkout degeri farkli!", ((Map) expectedDataMap.get("bookingdates")).get("checkout"), (jsonPath.getString("bookingdates.checkout")));
 
     }
 }
