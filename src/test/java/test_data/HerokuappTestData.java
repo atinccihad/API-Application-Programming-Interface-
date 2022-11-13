@@ -5,31 +5,31 @@ import java.util.HashMap;
 public class HerokuappTestData {
     /*
     {
-    "firstname": "Edgar",
-    "lastname": "Liu",
-    "totalprice": 111,
+    "firstname": "D1AC2",
+    "lastname": "211DA",
+    "totalprice": 12,
     "depositpaid": true,
     "bookingdates": {
-        "checkin": "2018-01-01",
-        "checkout": "2019-01-01"
+        "checkin": "2022-11-15",
+        "checkout": "2022-11-22"
     },
-    "additionalneeds": "Breakfast"
+    "additionalneeds": "D2B3D"
 }
      */
 
     public  HashMap<String, Object> setupTestData() {
         HashMap<String, Object> bookingdates = new HashMap<String, Object>();
-        bookingdates.put("checkin", "2018-01-01");
-        bookingdates.put("checkout", "2019-01-01");
+        bookingdates.put("checkin", "2022-11-15");
+        bookingdates.put("checkout", "2022-11-22");
 
         HashMap<String, Object> expectedData = new HashMap<String, Object>();
 
-        expectedData.put("firstname", "Alex");
-        expectedData.put("lastname", "Sevilla");
-        expectedData.put("totalprice", 111);
+        expectedData.put("firstname", "D1AC2");
+        expectedData.put("lastname", "211DA");
+        expectedData.put("totalprice", 12);
         expectedData.put("depositpaid", true);
         expectedData.put("bookingdates", bookingdates);
-        expectedData.put("additionalneeds", "Breakfast");
+        expectedData.put("additionalneeds", "D2B3D");
 
         return expectedData;
     }

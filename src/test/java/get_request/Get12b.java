@@ -17,16 +17,18 @@ public class Get12b extends HerokuAppBaseUrl {
     https://restful-booker.herokuapp.com/booking/23  url'ine istek gonderildiginde,
     Donen response'un
 
-    "firstname" : "Edgar",
-    "lastname" : "Liu",
-    "totalprice" : 111,
-    "depositpaid" : true,
-    "bookingdates" : {
-        "checkin": "2018-01-01",
-        "checkout": "2019-01-01"
+    {
+    "firstname": "D1AC2",
+    "lastname": "211DA",
+    "totalprice": 12,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2022-11-15",
+        "checkout": "2022-11-22"
     },
-    "additionalneeds": "Breakfast"
-    }
+    "additionalneeds": "D2B3D"
+}
+actualDataMap = {firstname=D1AC2, additionalneeds=D2B3D, bookingdates={checkin=2022-11-15, checkout=2022-11-22}, totalprice=12, depositpaid=true, lastname=211DA}
     gibi oldugunu test edin.
      */
 
@@ -48,13 +50,15 @@ public class Get12b extends HerokuAppBaseUrl {
         System.out.println("actualDataMap = " + actualDataMap);
 
         // Do assertion
+        assertEquals("statusCode !",200,response.getStatusCode());
+
         assertEquals("firstname'ler farkli!",expectedDataMap.get("firstname"),actualDataMap.get("firstname"));
         assertEquals("lastname'ler farkli!",expectedDataMap.get("lastname"),actualDataMap.get("lastname"));
         assertEquals("totalprice'ler farkli!",expectedDataMap.get("totalprice"),actualDataMap.get("totalprice"));
         assertEquals("additionalneeds'ler farkli!",expectedDataMap.get("additionalneeds"),actualDataMap.get("additionalneeds"));
 
-        assertEquals(((Map)expectedDataMap.get("bookingdates")).get("checkin"),((Map)actualDataMap.get("bookingdates")).get("checkin"));
-        assertEquals(((Map)expectedDataMap.get("bookingdates")).get("checkout"),((Map)actualDataMap.get("bookingdates")).get("checkout"));
+        assertEquals("bookingdates bolumundeki checkin degeri farkli!",((Map)expectedDataMap.get("bookingdates")).get("checkin"),((Map)actualDataMap.get("bookingdates")).get("checkin"));
+        assertEquals("bookingdates bolumundeki checkout degeri farkli!",((Map)expectedDataMap.get("bookingdates")).get("checkout"),((Map)actualDataMap.get("bookingdates")).get("checkout"));
 
     }
 }
