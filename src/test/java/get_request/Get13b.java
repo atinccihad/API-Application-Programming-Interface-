@@ -67,5 +67,7 @@ public class Get13b extends DummyRestapiBaseUrl {
         int datasize = ((List) actualDataMap.get("data")).size();
         assertEquals(expectedDataMap.get("sondanikincicalisanmaasi"), ((Map) ((List) actualDataMap.get("data")).get(datasize - 2)).get("employee_salary"));
 
+        // 40, 21, 19 yaslarinda calisanlar olup olmadigini
+
     }
 }
