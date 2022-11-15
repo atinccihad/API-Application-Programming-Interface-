@@ -38,7 +38,6 @@ actualDataMap = {firstname=D1AC2, additionalneeds=D2B3D, bookingdates={checkin=2
         // Set the Url
         spec.pathParams("parametre1", "booking", "parametre2", 23);
 
-        // Get the ExpectedData
         HerokuappTestData expectedObje = new HerokuappTestData();
         HashMap<String, Object> expectedDataMap = expectedObje.setupTestData();
         System.out.println("expectedDataMap = " + expectedDataMap);
