@@ -5,12 +5,11 @@ import io.restassured.response.Response;
 import org.junit.Test;
 import test_data.DummyRestapiTestData;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class Get13b extends DummyRestapiBaseUrl {
 /*
@@ -68,6 +67,19 @@ public class Get13b extends DummyRestapiBaseUrl {
         assertEquals(expectedDataMap.get("sondanikincicalisanmaasi"), ((Map) ((List) actualDataMap.get("data")).get(datasize - 2)).get("employee_salary"));
 
         // 40, 21, 19 yaslarinda calisanlar olup olmadigini
+        List<Integer> actualAges = new ArrayList<>();
 
+        for (int i = 0; i < datasize; i++) {
+            actualAges.add((Integer) ((Map) ((List) actualDataMap.get("data")).get(i)).get("employee_age"));
+        }
+        System.out.println("actualAges = " + actualAges);
+
+        assertTrue("40, 21, 19 icermiyor!", actualAges.containsAll((List) expectedDataMap.get("arananyaslar")));
+
+        // 11. calisan bilgileri
+        assertEquals(((Map) expectedDataMap.get("onbirincicalisan")).get("employee_name"), ((Map) ((List<?>) actualDataMap.get("data")).get(10)).get("employee_name"));
+        assertEquals(((Map) expectedDataMap.get("onbirincicalisan")).get("employee_salary"), ((Map) ((List<?>) actualDataMap.get("data")).get(10)).get("employee_salary"));
+        assertEquals(((Map) expectedDataMap.get("onbirincicalisan")).get("employee_age"), ((Map) ((List<?>) actualDataMap.get("data")).get(10)).get("employee_age"));
+        assertEquals(((Map) expectedDataMap.get("onbirincicalisan")).get("profile_image"), ((Map) ((List<?>) actualDataMap.get("data")).get(10)).get("profile_image"));
     }
 }
