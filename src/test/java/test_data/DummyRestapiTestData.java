@@ -15,17 +15,25 @@ public class DummyRestapiTestData {
         }
    */
     public HashMap<String,Object> setuptestData(){
-        List<Integer>employeeAges = new ArrayList<>();
-        employeeAges.add(40);
-        employeeAges.add(21);
-        employeeAges.add(19);
+        List<Integer>yaslar = new ArrayList<>();
+        yaslar.add(40);
+        yaslar.add(21);
+        yaslar.add(19);
 
-        HashMap<String, Object> expectedData = new HashMap<String, Object>();
-        expectedData.put("id",11);
-        expectedData.put("employee_name", "Jena Gaines");
-        expectedData.put("employee_salary", 90560);
-        expectedData.put("employee_age", 30);
-        expectedData.put("profile_image", "");
+        HashMap<String, Object> onbirinci = new HashMap<String, Object>();
+        onbirinci.put("id",11);
+        onbirinci.put("employee_name", "Jena Gaines");
+        onbirinci.put("employee_salary", 90560);
+        onbirinci.put("employee_age", 30);
+        onbirinci.put("profile_image", "");
+
+        HashMap<String,Object>expectedData = new HashMap<String, Object>();
+        expectedData.put("statusCode",200);
+        expectedData.put("besincicalisan","Airi Satou");
+        expectedData.put("calisansayisi",24);
+        expectedData.put("sondanikincicalisanmaasi",106450);
+        expectedData.put("arananyaslar",yaslar);
+        expectedData.put("onbirincicalisan",onbirinci);
 
         return expectedData;
     }
