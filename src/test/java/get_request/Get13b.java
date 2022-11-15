@@ -29,7 +29,6 @@ public class Get13b extends DummyRestapiBaseUrl {
         }
         seklinde oldugunu test edin.
  */
-
     @Test
     public void test13b() {
         // Set the Url
@@ -76,7 +75,7 @@ public class Get13b extends DummyRestapiBaseUrl {
 
         assertTrue("40, 21, 19 icermiyor!", actualAges.containsAll((List) expectedDataMap.get("arananyaslar")));
 
-        // 11. calisan bilgileri
+        // 11. calisan bilgileri assertion
         assertEquals(((Map) expectedDataMap.get("onbirincicalisan")).get("employee_name"), ((Map) ((List<?>) actualDataMap.get("data")).get(10)).get("employee_name"));
         assertEquals(((Map) expectedDataMap.get("onbirincicalisan")).get("employee_salary"), ((Map) ((List<?>) actualDataMap.get("data")).get(10)).get("employee_salary"));
         assertEquals(((Map) expectedDataMap.get("onbirincicalisan")).get("employee_age"), ((Map) ((List<?>) actualDataMap.get("data")).get(10)).get("employee_age"));
