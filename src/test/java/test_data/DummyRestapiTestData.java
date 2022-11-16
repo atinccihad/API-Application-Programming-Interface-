@@ -47,4 +47,31 @@ public class DummyRestapiTestData {
 
         return expectedData;
     }
+
+    public HashMap<String, String> setupRequestBody() {
+        HashMap<String, String> requestBody = new HashMap<>();
+        requestBody.put("name", "Cihad Atınç");
+        requestBody.put("salary", "1000");
+        requestBody.put("age", "34");
+        requestBody.put("profile_image", "https://github.com/atinccihad");
+
+        return requestBody;
+    }
+
+    public HashMap<String, Object> setupExpectedData() {
+
+        HashMap<String, Object> data = new HashMap<>();
+        data.put("name", "Cihad Atınç");
+        data.put("salary", "1000");
+        data.put("age", "34");
+        data.put("profile_image", "https://github.com/atinccihad");
+
+        HashMap<String, Object> expectedData = new HashMap<>();
+        expectedData.put("statusCode", 200);
+        expectedData.put("status", "success");
+        expectedData.put("data", data);
+        expectedData.put("message", "Successfully! Record has been added.");
+
+        return expectedData;
+    }
 }
