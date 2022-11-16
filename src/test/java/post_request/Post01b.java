@@ -1,10 +1,15 @@
 package post_request;
 
 import base_urls.DummyRestapiBaseUrl;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
 import org.junit.Test;
 import test_data.DummyRestapiTestData;
 
 import java.util.HashMap;
+
+import static io.restassured.RestAssured.given;
+import static org.junit.Assert.assertEquals;
 
 public class Post01b extends DummyRestapiBaseUrl {
     /*
@@ -42,8 +47,27 @@ public class Post01b extends DummyRestapiBaseUrl {
          testdata classında olusturdugumuz request body'i burada cagiriyoruz.
         */
         HashMap<String, String> requestBodyMap = obje.setupRequestBody();
+        HashMap<String, Object> expectedDataMap = obje.setupExpectedData();
 
+        Response response = given()
+                .accept("application/json")
+                .spec(spec).auth().basic("admin", "password123")
+                .body(requestBodyMap)
+                .when()
+                .post("/{parametre1}");
 
+        response.prettyPrint();
+
+        // De Serialization
+        HashMap<String, Object> actualDataMap = response.as(HashMap.class);
+        assertEquals(expectedDataMap.get("statusCode"), response.getStatusCode());
+        assertEquals(expectedDataMap.get("status"), actualDataMap.get("status"));
+        assertEquals(expectedDataMap.get("message"), actualDataMap.get("message"));
+
+        // JsonPath
+        JsonPath json = response.jsonPath();
+        assertEquals(expectedDataMap.get("status"), json.getString("status"));
+        assertEquals(expectedDataMap.get("message"), json.getString("message"));
 
     }
 }
