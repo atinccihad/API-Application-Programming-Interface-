@@ -42,7 +42,6 @@ public class HerokuappTestData {
         bookingdates.put("checkin", "2020-09-09");
         bookingdates.put("checkout", "2020-09-21");
 
-
         JSONObject expectedRequest = new JSONObject();
         expectedRequest.put("firstname", "Cihad");
         expectedRequest.put("lastname", "Atınç");
