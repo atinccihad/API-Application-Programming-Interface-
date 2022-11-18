@@ -1,5 +1,7 @@
 package test_data;
 
+import org.json.JSONObject;
+
 import java.util.HashMap;
 
 public class HerokuappTestData {
@@ -17,7 +19,7 @@ public class HerokuappTestData {
 }
      */
 
-    public  HashMap<String, Object> setupTestData() {
+    public HashMap<String, Object> setupTestData() {
         HashMap<String, Object> bookingdates = new HashMap<String, Object>();
         bookingdates.put("checkin", "2022-11-15");
         bookingdates.put("checkout", "2022-11-22");
@@ -32,5 +34,21 @@ public class HerokuappTestData {
         expectedData.put("additionalneeds", "D2B3D");
 
         return expectedData;
+    }
+
+    public JSONObject setupTestAndRequestData() {
+
+        JSONObject bookingdates = new JSONObject();
+        bookingdates.put("checkin", "2020-09-09");
+        bookingdates.put("checkout", "2020-09-21");
+
+        JSONObject expectedRequest = new JSONObject();
+        expectedRequest.put("firstname", "Cihad");
+        expectedRequest.put("lastname", "Atınç");
+        expectedRequest.put("totalprice", 11111);
+        expectedRequest.put("depositpaid", true);
+        expectedRequest.put("bookingdates", bookingdates);
+
+        return expectedRequest;
     }
 }
