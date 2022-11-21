@@ -8,6 +8,7 @@ import org.junit.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static utilities.Authentication.generateToken;
 
 public class GetMedunna extends MedunnaBaseUrl {
@@ -61,7 +62,7 @@ public class GetMedunna extends MedunnaBaseUrl {
         assertEquals("MALE", json.getString("gender"));
         assertEquals("doktoryusuf", json.getString("user.login"));
         assertEquals("doktoryusuf@gmail.com", json.getString("user.email"));
-        assertEquals(true, json.getBoolean("user.activated"));
+        assertTrue(json.getBoolean("user.activated"));
         assertEquals("751-01-0103", json.getString("user.ssn"));
         assertEquals("NUCLEAR_MEDICINE", json.getString("speciality"));
     }
