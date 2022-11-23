@@ -12,7 +12,6 @@ import static org.junit.Assert.assertTrue;
 import static utilities.Authentication.generateToken;
 
 public class GetMedunna extends MedunnaBaseUrl {
-
     // https://www.medunna.com/api/physicians/147333
     /*
     {
