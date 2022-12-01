@@ -13,7 +13,6 @@ public class PostRequest extends GMIBankBaseUrl {
     /*
     https://www.gmibank.com/api/tp-countries adrresine yeeni bir ülke ekelyin
     */
-
     @Test
     public void test10() {
         spec01.pathParam("first", "tp-countries");
