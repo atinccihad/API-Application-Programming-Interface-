@@ -39,7 +39,6 @@ public class Customer {
         "accounts": []
     }
      */
-
     private int id;
     private String firstName;
     private String lastName;
