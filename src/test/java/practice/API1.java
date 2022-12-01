@@ -17,7 +17,6 @@ public class API1 extends AutomationBaseUrl {
         Response response = given().spec(spec).when().get("/{first}/{second}");
         //JsonPath jsonPath = response.jsonPath();
         //jsonPath.prettyPrint();
-
         softAssert.assertEquals(response.statusCode(), 200);
         response.prettyPrint();
         softAssert.assertAll();
