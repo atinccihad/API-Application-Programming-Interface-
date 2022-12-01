@@ -35,7 +35,6 @@ public class HerokuappTestData {
 
         return expectedData;
     }
-
     public JSONObject setupTestAndRequestData() {
 
         JSONObject bookingdates = new JSONObject();
