@@ -30,7 +30,6 @@ public class Patch01 extends JsonplaceholderBaseUrl {
                        "id": 198
                        }
       */
-
     @Test
     public void patch01() {
         // Set The Url
