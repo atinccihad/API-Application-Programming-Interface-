@@ -14,7 +14,6 @@ public class GoRestTestData {
 
         return dataKeyMap;
     }
-
     public Map<String, Object> expectedDataMethod(Object meta, Map<String, String> data) {
 
         Map<String, Object> expectedData = new HashMap<>();
