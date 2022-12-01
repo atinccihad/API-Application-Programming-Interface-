@@ -15,7 +15,6 @@ public class API4 extends AutomationBaseUrl {
     Response Code: 405
     Response Message: This request method is not supported.
      */
-
     @Test
     public void putToAllBrandsList() {
         SoftAssert softAssert = new SoftAssert();
