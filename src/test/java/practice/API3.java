@@ -21,7 +21,6 @@ public class API3 extends AutomationBaseUrl {
     And
     Response JSON: All brands list
    */
-
     @Test
     public void GetAllBrandsList() {
         SoftAssert softAssert = new SoftAssert();
