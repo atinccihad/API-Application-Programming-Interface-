@@ -18,7 +18,6 @@ public class API2 extends AutomationBaseUrl {
     And
     Response Message: This request method is not supported.
    */
-
     @Test
     public void PostToAllProductsList() {
         String message = "This request method is not supported.";
