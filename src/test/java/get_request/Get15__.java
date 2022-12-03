@@ -11,7 +11,7 @@ import utils.ObjectMapperUtils;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class Get15___ extends RestfulBaseUrl {
+public class Get15__ extends RestfulBaseUrl {
     /*
         Given
 	            https://restful-booker.herokuapp.com/booking/22
