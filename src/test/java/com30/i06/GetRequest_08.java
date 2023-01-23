@@ -16,7 +16,15 @@ public class GetRequest_08 extends RestfulHerokuapp {
     content-type : "application/json"
     response body'sinin asagidaki gibi oldugunu test edin
     {
-
+    "firstname": "Susan",
+    "lastname": "Jackson",
+    "totalprice": 851,
+    "depositpaid": false,
+    "bookingdates": {
+        "checkin": "2022-02-20",
+        "checkout": "2022-12-30"
+     },
+    "additionalneeds": "Breakfast"
     }
     */
 
