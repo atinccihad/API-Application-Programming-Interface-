@@ -24,16 +24,19 @@ public class GetRequest_06 extends JsonPlaceHolderTestBase {
     public void test() {
         // String url = "https://jsonplaceholder.typicode.com/todos/123";
         specJson.pathParams("first", "todos",
-                "second", 123);
-
+                       "second", 123);
         Response response = given()
                 .accept("application/json")
                 .spec(specJson)
                 .when()
                 .get("/{first}/{second}");
         response.prettyPrint();
-
-        // Matchers class
+       /*
+        Matchers class ile dogrulama yapmak icin Response class'indan olusturdugumuz objeyi kullanarak
+        response.then()
+                .assertThat()..... seklinde baslayip body icinde Matchers class'in
+                ilgili methodlarini kullanarak dogrulamalarimizi yapabiliyoruz.
+         */
         response.then().assertThat()
                 .statusCode(200)
                 .contentType("application/json")

@@ -4,9 +4,9 @@ import com30.testBase.RestfulHerokuapp;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
-
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 public class GetRequest_08 extends RestfulHerokuapp {
     /*
@@ -22,8 +22,8 @@ public class GetRequest_08 extends RestfulHerokuapp {
 
     @Test
     public void test() {
-        specRestful.pathParams("first","booking",
-                          "second",5);
+        specRestful.pathParams("first", "booking",
+                "second", 3);
         Response response = given()
                 .accept("application/json")
                 .spec(specRestful)
@@ -33,12 +33,13 @@ public class GetRequest_08 extends RestfulHerokuapp {
 
         // JsonPath
         JsonPath jsonPath = response.jsonPath();
-        assertEquals("Sally",jsonPath.getString("firstname"));
-        assertEquals("Smith",jsonPath.getString("lastname"));
-        assertEquals(789,jsonPath.getInt("totalprice"));
-        assertEquals(false,jsonPath.getBoolean("depositpaid"));
-        assertEquals("2017-12-11",jsonPath.getString("bookingdates.checkin"));
-        assertEquals("2020-02-20",jsonPath.getString("bookingdates.checkout"));
+        assertEquals("Susan", jsonPath.getString("firstname"));
+        assertEquals("Jackson", jsonPath.getString("lastname"));
+        assertEquals(851, jsonPath.getInt("totalprice"));
+        assertFalse(jsonPath.getBoolean("depositpaid"));
+        assertEquals("2022-02-20", jsonPath.getString("bookingdates.checkin"));
+        assertEquals("2022-12-30", jsonPath.getString("bookingdates.checkout"));
+        assertEquals("Breakfast", jsonPath.getString("additionalneeds"));
 
     }
 }

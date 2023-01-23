@@ -31,8 +31,8 @@ public class GetRequest_05 {
                 .assertThat()
                 .statusCode(200)
                 .contentType("application/json")
-                .body("data.id", hasSize(24),
+                .body(                  "data.id", hasSize(24),
                         "data.employee_name", hasItem("Doris Wilder"),
-                        "data.employee_age", hasItems(35, 30, 40));
+                                             "data.employee_age", hasItems(35, 30, 40));
     }
 }

@@ -1,12 +1,11 @@
 package com30.i05;
 
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasItem;
+
 
 public class GetRequest_07 {
     /*
@@ -23,12 +22,11 @@ public class GetRequest_07 {
         "employee_salary": 320800,
         "employee_age": 61,
         "profile_image": ""
-    },
+            },
     "message": "Successfully! Record has been fetched."
     }
      seklinde oldugunu test edin.
     */
-
     @Test
     public void test() {
         String url = "https://dummy.restapiexample.com/api/v1/employee/1";
@@ -43,12 +41,12 @@ public class GetRequest_07 {
                 .assertThat()
                 .statusCode(200)
                 .contentType("application/json")
-                .body("status", equalTo("success"),
+                .body(                  "status", equalTo("success"),
                         "data.id", equalTo(1),
-                        "data.employee_name", equalTo("Tiger Nixon"),
-                        "data.employee_salary", equalTo(320800),
-                        "data.employee_age", equalTo(61),
-                        "data.profile_image", equalTo(""),
-                        "message", equalTo("Successfully! Record has been fetched."));
+                                             "data.employee_name", equalTo("Tiger Nixon"),
+                                             "data.employee_salary", equalTo(320800),
+                                             "data.employee_age", equalTo(61),
+                                             "data.profile_image", equalTo(""),
+                                             "message", equalTo("Successfully! Record has been fetched."));
     }
 }
