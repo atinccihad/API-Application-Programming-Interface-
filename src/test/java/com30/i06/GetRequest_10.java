@@ -5,6 +5,8 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
 
+import java.util.List;
+
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertEquals;
@@ -19,7 +21,8 @@ public class GetRequest_10 extends DummyRestestapiexample {
     6. calisanin maasinin "372000" oldugunu,
     Toplam 24 calisan oldugunu,
     "Rhona Davidson" un employee'lerden biri oldugunu,
-    "21", "23", "61" yaslarinda employee ler oldugunu test edin.
+    "21", "23", "61" yaslarinda employee ler oldugunu test edin
+    Ilk 4 isim bilgisini yazdiriniz.
      */
 
     @Test
@@ -39,12 +42,15 @@ public class GetRequest_10 extends DummyRestestapiexample {
         JsonPath jsonPath = response.jsonPath();
 
         int perNum = jsonPath.getList("data.id").size();
-        String perNames = jsonPath.getList("data.employee_name").toString();
+        List<String> perNames = jsonPath.getList("data.employee_name");
         String perAges = jsonPath.getList("data.employee_age").toString();
         String wantedName = "Rhona Davidson";
 
         System.out.println(perNum);
         System.out.println(perNames);
+        for (int i = 0; i < 4; i++) {
+            System.out.println((i + 1) + ".isim: " + perNames.get(i) + " ");
+        }
 
         assertEquals(24, jsonPath.getList("data.id").size());
         assertEquals("Airi Satou", jsonPath.getString("data[4].employee_name"));

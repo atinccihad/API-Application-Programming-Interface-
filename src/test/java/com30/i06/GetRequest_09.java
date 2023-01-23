@@ -27,7 +27,7 @@ public class GetRequest_09 extends DummyRestestapiexample {
                 .spec(specDummy)
                 .when()
                 .get("/{first}");
-        // response.prettyPrint();
+        response.prettyPrint();
 
         JsonPath jsonPath = response.jsonPath();
         System.out.println(jsonPath.getList("data.employee_name"));
@@ -39,6 +39,5 @@ public class GetRequest_09 extends DummyRestestapiexample {
         assertEquals(200,response.getStatusCode());
         assertEquals("Ashton Cox",jsonPath.getString("data[2].employee_name"));
         assertEquals("Doris Wilder",jsonPath.getString("data.employee_name[-1]"));
-
     }
 }
