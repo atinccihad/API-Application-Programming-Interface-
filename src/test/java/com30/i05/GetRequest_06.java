@@ -33,12 +33,13 @@ public class GetRequest_06 extends JsonPlaceHolderTestBase {
                 .get("/{first}/{second}");
         response.prettyPrint();
 
+        // Matchers class
         response.then().assertThat()
                 .statusCode(200)
                 .contentType("application/json")
-                .header(           "Server", equalTo("cloudflare"))
-                .body(                  "userId", equalTo(7),
-                        "title",  equalTo("esse et quis iste est earum aut impedit"),
+                .header(           "Server",    equalTo("cloudflare"))
+                .body(                  "userId",    equalTo(7),
+                        "title",     equalTo("esse et quis iste est earum aut impedit"),
                                              "completed", equalTo(false));
     }
 }

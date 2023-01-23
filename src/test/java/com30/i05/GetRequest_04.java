@@ -27,13 +27,18 @@ public class GetRequest_04 {
                 .when()
                 .get(url);
         response.prettyPrint();
-
+        /*
+        Matchers class ile dogrulama yapmak icin Response class'indan olusturdugumuz objeyi kullanarak
+        response.then()
+                .assertThat()..... seklinde baslayip body icinde Matchers class'in
+                ilgili methodlarini kullanarak dogrulamalarimizi yapabiliyoruz.
+         */
         response.then()
                 .assertThat()
                 .statusCode(200)
                 .contentType("application/json")
-                .body("firstname", equalTo("Jim"),
+                .body(                  "firstname", equalTo("Jim"),
                         "totalprice", equalTo(162),
-                        "bookingdates.checkin", equalTo("2018-07-03"));
+                                             "bookingdates.checkin", equalTo("2018-07-03"));
     }
 }
