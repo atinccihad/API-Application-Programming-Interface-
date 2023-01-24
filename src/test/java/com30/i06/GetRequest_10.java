@@ -66,7 +66,7 @@ public class GetRequest_10 extends DummyRestestapiexample {
                 .assertThat()
                 .statusCode(200)
                 .contentType("application/json")
-                .body("data[4].employee_name", equalTo("Airi Satou"),
+                .body(                  "data[4].employee_name", equalTo("Airi Satou"),
                         "data[5].employee_salary", equalTo(372000));
     }
 }

@@ -6,6 +6,7 @@ import io.restassured.response.Response;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertEquals;
 
 public class GetRequest_09 extends DummyRestestapiexample {
@@ -28,7 +29,7 @@ public class GetRequest_09 extends DummyRestestapiexample {
                 .when()
                 .get("/{first}");
         response.prettyPrint();
-
+        // JsonPath
         JsonPath jsonPath = response.jsonPath();
         System.out.println(jsonPath.getList("data.employee_name"));
         System.out.println("3. calisan kisinin ismi: " + jsonPath.getString("data[2].employee_name"));
@@ -39,5 +40,13 @@ public class GetRequest_09 extends DummyRestestapiexample {
         assertEquals(200,response.getStatusCode());
         assertEquals("Ashton Cox",jsonPath.getString("data[2].employee_name"));
         assertEquals("Doris Wilder",jsonPath.getString("data.employee_name[-1]"));
+
+        // Matchers
+        response.then()
+                .assertThat()
+                .statusCode(200)
+                .contentType("application/json")
+                .body(                  "data[2].employee_name",equalTo("Ashton Cox"),
+                        "data.employee_name[-1]",equalTo("Doris Wilder"));
     }
 }

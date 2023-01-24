@@ -5,8 +5,8 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
 import static io.restassured.RestAssured.given;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.hamcrest.Matchers.equalTo;
+import static org.junit.Assert.*;
 
 public class GetRequest_08 extends RestfulHerokuapp {
     /*
@@ -31,7 +31,7 @@ public class GetRequest_08 extends RestfulHerokuapp {
     @Test
     public void test() {
         specRestful.pathParams("first", "booking",
-                "second", 3);
+                          "second", 3);
         Response response = given()
                 .accept("application/json")
                 .spec(specRestful)
@@ -41,13 +41,20 @@ public class GetRequest_08 extends RestfulHerokuapp {
 
         // JsonPath
         JsonPath jsonPath = response.jsonPath();
-        assertEquals("Susan", jsonPath.getString("firstname"));
-        assertEquals("Jackson", jsonPath.getString("lastname"));
-        assertEquals(851, jsonPath.getInt("totalprice"));
-        assertFalse(jsonPath.getBoolean("depositpaid"));
-        assertEquals("2022-02-20", jsonPath.getString("bookingdates.checkin"));
-        assertEquals("2022-12-30", jsonPath.getString("bookingdates.checkout"));
-        assertEquals("Breakfast", jsonPath.getString("additionalneeds"));
+        assertEquals("Mary", jsonPath.getString("firstname"));
+        assertEquals("Ericsson", jsonPath.getString("lastname"));
+        assertEquals(695, jsonPath.getInt("totalprice"));
+        assertTrue(jsonPath.getBoolean("depositpaid"));
+        assertEquals("2019-02-28", jsonPath.getString("bookingdates.checkin"));
+        assertEquals("2022-09-24", jsonPath.getString("bookingdates.checkout"));
 
+        // Matchers
+        response.then().assertThat().statusCode(200).contentType("application/json")
+                .body("firstname",equalTo("Mary"),
+                        "lastname",equalTo("Ericsson"),
+                                             "totalprice",equalTo(695),
+                                             "depositpaid",equalTo(true),
+                                             "bookingdates.checkin",equalTo("2019-02-28"),
+                                             "bookingdates.checkout",equalTo("2022-09-24"));
     }
 }
