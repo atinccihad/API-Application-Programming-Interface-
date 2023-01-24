@@ -8,7 +8,7 @@ import org.junit.Test;
 import java.util.List;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -24,7 +24,6 @@ public class GetRequest_10 extends DummyRestestapiexample {
     "21", "23", "61" yaslarinda employee ler oldugunu test edin
     Ilk 4 isim bilgisini yazdiriniz.
      */
-
     @Test
     public void test() {
         specDummy.pathParam("first", "employees");
@@ -43,7 +42,7 @@ public class GetRequest_10 extends DummyRestestapiexample {
 
         int perNum = jsonPath.getList("data.id").size();
         List<String> perNames = jsonPath.getList("data.employee_name");
-        String perAges = jsonPath.getList("data.employee_age").toString();
+        List<String> perAges = jsonPath.getList("data.employee_age");
         String wantedName = "Rhona Davidson";
 
         System.out.println(perNum);
@@ -57,9 +56,9 @@ public class GetRequest_10 extends DummyRestestapiexample {
         assertEquals(372000, jsonPath.getInt("data[5].employee_salary"));
         assertEquals(24, perNum);
         assertTrue(perNames.contains(wantedName));
-        assertTrue(perAges.contains("21"));
-        assertTrue(perAges.contains("23"));
-        assertTrue(perAges.contains("61"));
+        assertTrue(perAges.contains(21));
+        assertTrue(perAges.contains(23));
+        assertTrue(perAges.contains(61));
 
         // Matchers
         response.then()
@@ -67,6 +66,8 @@ public class GetRequest_10 extends DummyRestestapiexample {
                 .statusCode(200)
                 .contentType("application/json")
                 .body(                  "data[4].employee_name", equalTo("Airi Satou"),
-                        "data[5].employee_salary", equalTo(372000));
+                        "data[5].employee_salary", equalTo(372000),
+                                             "data.employee_name",hasItems(wantedName),
+                                             "data.employee_age",equalTo(perAges));
     }
 }
