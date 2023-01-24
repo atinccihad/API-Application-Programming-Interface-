@@ -72,6 +72,7 @@ public class GetRequest_11 extends DummyRestestapiexampleTestBase {
         System.out.println("employeeSalary = " + employeeSalary);
         int enBuyukSalaryIndex = 0;
         int enBuyukSalary = 0;
+
         for (int i = 0; i < employeeSalary.size(); i++) {
             if (employeeSalary.get(i) > enBuyukSalary) {
                 enBuyukSalary = employeeSalary.get(i);
