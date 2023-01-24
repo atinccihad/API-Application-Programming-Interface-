@@ -1,6 +1,6 @@
 package com30.i06;
 
-import com30.testBase.DummyRestestapiexample;
+import com30.testBase.DummyRestestapiexampleTestBase;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
@@ -9,7 +9,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertEquals;
 
-public class GetRequest_09 extends DummyRestestapiexample {
+public class GetRequest_09 extends DummyRestestapiexampleTestBase {
     /*
     https://dummy.restapiexample.com/api/v1/employees url'ine,
 

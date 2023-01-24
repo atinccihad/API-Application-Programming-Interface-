@@ -1,6 +1,6 @@
 package com30.i06;
 
-import com30.testBase.DummyRestestapiexample;
+import com30.testBase.DummyRestestapiexampleTestBase;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
@@ -13,7 +13,7 @@ import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class GetRequest_10 extends DummyRestestapiexample {
+public class GetRequest_10 extends DummyRestestapiexampleTestBase {
     /*
     https://dummy.restapiexample.com/api/v1/employees url'ine bir istek gonderildiginde,
     status code : 200,
@@ -35,7 +35,7 @@ public class GetRequest_10 extends DummyRestestapiexample {
                 .when()
                 .get("/{first}");
         response.prettyPrint();
-
+        // status code : 200
         assertEquals(200, response.getStatusCode());
 
         // JsonPath
@@ -44,7 +44,6 @@ public class GetRequest_10 extends DummyRestestapiexample {
         int perNum = jsonPath.getList("data.id").size();
         List<String> perNames = jsonPath.getList("data.employee_name");
         List<String> employeeAges = jsonPath.getList("data.employee_age");
-
         String wantedName = "Rhona Davidson";
 
         System.out.println(perNum);
@@ -52,20 +51,21 @@ public class GetRequest_10 extends DummyRestestapiexample {
         for (int i = 0; i < 4; i++) {
             System.out.println((i + 1) + ".isim: " + perNames.get(i) + " ");
         }
-
-        assertEquals(24, jsonPath.getList("data.id").size());
+        // 5. calisanin isminin "Airi Satou" oldugunu
         assertEquals("Airi Satou", jsonPath.getString("data[4].employee_name"));
+        // 6. calisanin maasinin "372000" oldugunu
         assertEquals(372000, jsonPath.getInt("data[5].employee_salary"));
+        // Toplam 24 calisan oldugunu
         assertEquals(24, perNum);
+        assertEquals(24, jsonPath.getList("data.id").size());
+        // "Rhona Davidson" un employee'lerden biri oldugunu
         assertTrue(perNames.contains(wantedName));
-
-        assertTrue(employeeAges.contains(21));
-        assertTrue(employeeAges.contains(23));
-        assertTrue(employeeAges.contains(61));
+        // "21", "23", "61" yaslarinda employee ler oldugunu
         List<Integer> soughtAge = new ArrayList<>();
         soughtAge.add(21);
         soughtAge.add(23);
         soughtAge.add(61);
+        assertTrue(employeeAges.containsAll(soughtAge));
         assertTrue("soughtAge !!",employeeAges.containsAll(soughtAge));
 
         // Matchers
