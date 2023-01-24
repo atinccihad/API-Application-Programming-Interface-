@@ -43,7 +43,7 @@ public class GetRequest_10 extends DummyRestestapiexampleTestBase {
 
         int perNum = jsonPath.getList("data.id").size();
         List<String> perNames = jsonPath.getList("data.employee_name");
-        List<String> employeeAges = jsonPath.getList("data.employee_age");
+        List<Integer> employeeAges = jsonPath.getList("data.employee_age");
         String wantedName = "Rhona Davidson";
 
         System.out.println(perNum);
