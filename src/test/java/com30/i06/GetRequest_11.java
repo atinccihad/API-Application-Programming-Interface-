@@ -29,6 +29,11 @@ public class GetRequest_11 extends DummyRestestapiexampleTestBase {
 
     @Test
     public void test() {
+        /*
+        groovy language javanin alt dilidir.
+        Biz bu dil yardimi ile loop kullanmadan gelen response'daki degerleri
+        bir sarta bagli olarak listeye assign edebiliyoruz.
+         */
         specDummy.pathParams("first", "employees");
 
         Response response = given()
@@ -50,10 +55,7 @@ public class GetRequest_11 extends DummyRestestapiexampleTestBase {
             }
         }
         assertEquals(14, ids10danBuyuk.size());
-        /*
-        groovy language javanin alt dilidir.
-        Biz bu dil yardimi ile loop kullanmadan gelen response'daki degerleri bir sarta bagli olarak listeye assign edebiliyoruz.
-         */
+
         // *** groovy language ***
         List<Integer> ondanBuyukIds = jsonPath.getList("data.findAll{it.id>10}");
         System.out.println("ondanBuyukIds = " + ondanBuyukIds);

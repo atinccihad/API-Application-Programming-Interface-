@@ -18,10 +18,9 @@ public class GetRequest_03 {
      ve lastname'in "Jackson"
      ve checkin date'in "2017-07-30"
      ve checkout date'in "2022-05-17"
-     ve additionalneeds'in "Breakfast"
+     ve additionalneeds'in "Breakfast
      oldugunu test edin.
      */
-
     @Test
     public void test() {
 

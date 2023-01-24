@@ -13,7 +13,6 @@ public class GetRequest_01 {
     Ve Status Line'in HTTP/1.1 200 OK,
     oldugunu test edin.
     */
-
     @Test
     public void test() {
         // 1- API test yaparken ilk olarak url(end point) belirlenmeli)
@@ -46,5 +45,4 @@ public class GetRequest_01 {
                 contentType("application/json; charset=utf-8").
                 statusLine("HTTP/1.1 200 OK");
     }
-
 }

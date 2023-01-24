@@ -16,7 +16,6 @@ public class GetRequest_05 {
     ve employee'lerden birinin "Doris Wilder"
     ve gelen yaslar icinde 21, 61 ve 23 degerlerinin bulundugunu test edin.
     */
-
     @Test
     public void test() {
         String url = "https://dummy.restapiexample.com/api/v1/employees";

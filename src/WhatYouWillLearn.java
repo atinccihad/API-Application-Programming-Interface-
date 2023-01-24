@@ -1,5 +1,5 @@
 public class WhatYouWillLearn {
-    /*    API DERSİNDE NELER ÖĞRENECEKSİNİZ?
+    /*    API DERSİNDE NELER ÖĞRENILECEK?
      * POSTMAN
 
      * Rest Assured: REST API'lerini test etmek ve doğrulamak için kullanılan

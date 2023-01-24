@@ -6,7 +6,6 @@ import org.junit.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
-
 public class GetRequest_07 {
     /*
     https://dummy.restapiexample.com/api/v1/employee/719 url'ine,

@@ -16,8 +16,7 @@ public class GetRequest_04 {
     ve totalprice'in 162
     ve checkin date'in "2018-07-03"
     oldugunu test edin.
-            */
-
+    */
     @Test
     public void test() {
         String url = "https://restful-booker.herokuapp.com/booking/5";

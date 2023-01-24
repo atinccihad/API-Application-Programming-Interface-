@@ -11,14 +11,12 @@ import static org.junit.Assert.assertEquals;
 
 public class GetRequest_09 extends DummyRestestapiexampleTestBase {
     /*
-    https://dummy.restapiexample.com/api/v1/employees url'ine,
-
+    https://dummy.restapiexample.com/api/v1/employees url'ine request gonderip,
     1) Butun calisanlarin isimlerini consola yazdiralim
     2) 3. calisan kisinin ismini consola yazdiralim
     3) Ilk 5 calisanin isimlerini consola yazdiralim
     4) En son calisanin ismini consola yazdiralim
     */
-
     @Test
     public void test() {
         specDummy.pathParam("first", "employees");
@@ -29,6 +27,7 @@ public class GetRequest_09 extends DummyRestestapiexampleTestBase {
                 .when()
                 .get("/{first}");
         response.prettyPrint();
+
         // JsonPath
         JsonPath jsonPath = response.jsonPath();
         System.out.println(jsonPath.getList("data.employee_name"));

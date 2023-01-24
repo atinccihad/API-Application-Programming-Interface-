@@ -7,10 +7,9 @@ import org.junit.Test;
 import static io.restassured.RestAssured.given;
 
 public class GetRequest_02 {
-
     @Test
     public void test01() {
-        /*
+    /*
     https://restful-booker.herokuapp.com/booking url'ine,
     accept type'i "application/json; charset=utf-8" olan GET request yolladigimda,
     gelen response'un,
@@ -38,7 +37,7 @@ public class GetRequest_02 {
 
     @Test
     public void test02() {
-              /*
+    /*
     https://restful-booker.herokuapp.com/booking/10011 url'ine,
     accept type'i "application/json; charset=utf-8" olan GET request yolladigimda,
     gelen response'un,

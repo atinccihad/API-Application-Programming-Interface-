@@ -53,13 +53,17 @@ public class GetRequest_10 extends DummyRestestapiexampleTestBase {
         }
         // 5. calisanin isminin "Airi Satou" oldugunu
         assertEquals("Airi Satou", jsonPath.getString("data[4].employee_name"));
+
         // 6. calisanin maasinin "372000" oldugunu
         assertEquals(372000, jsonPath.getInt("data[5].employee_salary"));
+
         // Toplam 24 calisan oldugunu
         assertEquals(24, perNum);
         assertEquals(24, jsonPath.getList("data.id").size());
+
         // "Rhona Davidson" un employee'lerden biri oldugunu
         assertTrue(perNames.contains(wantedName));
+
         // "21", "23", "61" yaslarinda employee ler oldugunu
         List<Integer> soughtAge = new ArrayList<>();
         soughtAge.add(21);

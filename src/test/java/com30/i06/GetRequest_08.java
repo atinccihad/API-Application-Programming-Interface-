@@ -27,7 +27,6 @@ public class GetRequest_08 extends RestfulHerokuappTestBase {
     "additionalneeds": "Breakfast"
     }
     */
-
     @Test
     public void test() {
         specRestful.pathParams("first", "booking",
