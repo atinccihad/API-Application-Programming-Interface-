@@ -5,6 +5,7 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static io.restassured.RestAssured.given;
@@ -42,7 +43,8 @@ public class GetRequest_10 extends DummyRestestapiexample {
 
         int perNum = jsonPath.getList("data.id").size();
         List<String> perNames = jsonPath.getList("data.employee_name");
-        List<String> perAges = jsonPath.getList("data.employee_age");
+        List<String> employeeAges = jsonPath.getList("data.employee_age");
+
         String wantedName = "Rhona Davidson";
 
         System.out.println(perNum);
@@ -56,9 +58,15 @@ public class GetRequest_10 extends DummyRestestapiexample {
         assertEquals(372000, jsonPath.getInt("data[5].employee_salary"));
         assertEquals(24, perNum);
         assertTrue(perNames.contains(wantedName));
-        assertTrue(perAges.contains(21));
-        assertTrue(perAges.contains(23));
-        assertTrue(perAges.contains(61));
+
+        assertTrue(employeeAges.contains(21));
+        assertTrue(employeeAges.contains(23));
+        assertTrue(employeeAges.contains(61));
+        List<Integer> soughtAge = new ArrayList<>();
+        soughtAge.add(21);
+        soughtAge.add(23);
+        soughtAge.add(61);
+        assertTrue("soughtAge !!",employeeAges.containsAll(soughtAge));
 
         // Matchers
         response.then()
@@ -68,6 +76,6 @@ public class GetRequest_10 extends DummyRestestapiexample {
                 .body(                  "data[4].employee_name", equalTo("Airi Satou"),
                         "data[5].employee_salary", equalTo(372000),
                                              "data.employee_name",hasItems(wantedName),
-                                             "data.employee_age",equalTo(perAges));
+                                             "data.employee_age",equalTo(employeeAges));
     }
 }
