@@ -74,6 +74,5 @@ public class GetRequest_12TestData extends JsonPlaceHolderTestBase {
             - object mapper
             - pojo class ile birlikte Map class'i kullanacagiz
          */
-
     }
 }
