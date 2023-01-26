@@ -4,7 +4,7 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Before;
 
-public class RestfulHerokuappTestBase {
+public class RestfulBookerHerokuappTestBase {
 
     protected RequestSpecification specRestful;
 

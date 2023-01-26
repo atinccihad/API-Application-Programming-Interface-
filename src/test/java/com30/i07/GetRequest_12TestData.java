@@ -74,5 +74,11 @@ public class GetRequest_12TestData extends JsonPlaceHolderTestBase {
             - object mapper
             - pojo class ile birlikte Map class'i kullanacagiz
          */
+        HashMap<String,Object> actualData = response.as(HashMap.class);
+        System.out.println("actualData Map = " + actualData);
+
+        assertEquals(expectedData.get("userId"),actualData.get("userId"));
+        assertEquals(expectedData.get("title"),actualData.get("title"));
+        assertEquals(expectedData.get("completed"),actualData.get("completed"));
     }
 }
