@@ -28,9 +28,8 @@ public class GetRequest_13 extends RestfulBookerHerokuappTestBase {
                      },
     "additionalneeds": "Breakfast"
      }
-     oldugunu test edin.
+     seklinde oldugunu test edin.
      */
-
     @Test
     public void test() {
         // url olustur
