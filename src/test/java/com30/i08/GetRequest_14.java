@@ -40,6 +40,7 @@ public class GetRequest_14 extends DummyRestestapiexampleTestBase {
                 .spec(specDummy)
                 .when()
                 .get("/{first}");
+
         response.prettyPrint();
     }
 }
