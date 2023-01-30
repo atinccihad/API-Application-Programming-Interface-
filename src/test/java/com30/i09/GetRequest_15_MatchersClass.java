@@ -81,17 +81,17 @@ public class GetRequest_15_MatchersClass extends DummyRestestapiexampleTestBase 
         assertTrue(actualYasListesi.containsAll((List) expectedDataMap.get("arananYaslar")));
 
         // 11. calisan bilgilerini dogrulayin
-        assertEquals(((Map)expectedDataMap.get("onbirinciCalisan")).get("employee_name"),
-                ((Map)((List)actualDataMap.get("data")).get(10)).get("employee_name"));
+        assertEquals(((Map) expectedDataMap.get("onbirinciCalisan")).get("employee_name"),
+                ((Map) ((List) actualDataMap.get("data")).get(10)).get("employee_name"));
 
-        assertEquals(((Map)expectedDataMap.get("onbirinciCalisan")).get("employee_salary"),
-                ((Map)((List)actualDataMap.get("data")).get(10)).get("employee_salary"));
+        assertEquals(((Map) expectedDataMap.get("onbirinciCalisan")).get("employee_salary"),
+                ((Map) ((List) actualDataMap.get("data")).get(10)).get("employee_salary"));
 
-        assertEquals(((Map)expectedDataMap.get("onbirinciCalisan")).get("employee_age"),
-                ((Map)((List)actualDataMap.get("data")).get(10)).get("employee_age"));
+        assertEquals(((Map) expectedDataMap.get("onbirinciCalisan")).get("employee_age"),
+                ((Map) ((List) actualDataMap.get("data")).get(10)).get("employee_age"));
 
-        assertEquals(((Map)expectedDataMap.get("onbirinciCalisan")).get("profile_image"),
-                ((Map)((List)actualDataMap.get("data")).get(10)).get("profile_image"));
+        assertEquals(((Map) expectedDataMap.get("onbirinciCalisan")).get("profile_image"),
+                ((Map) ((List) actualDataMap.get("data")).get(10)).get("profile_image"));
 
     }
 }

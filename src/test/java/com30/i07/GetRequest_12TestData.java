@@ -19,11 +19,11 @@ public class GetRequest_12TestData extends JsonPlaceHolderTestBase {
     @Test
     public void test() {
         specJson.pathParams("first",
-                            "todos", "second", 2);
+                "todos", "second", 2);
 
         JsonPlaceHolderTestData expectedObje = new JsonPlaceHolderTestData();
 
-        HashMap <String,Object> expectedData = (HashMap<String, Object>) expectedObje.setUpTestData();
+        HashMap<String, Object> expectedData = (HashMap<String, Object>) expectedObje.setUpTestData();
         System.out.println("expectedData = " + expectedData);
 
         Response response = given()
@@ -74,11 +74,11 @@ public class GetRequest_12TestData extends JsonPlaceHolderTestBase {
             - object mapper
             - pojo class ile birlikte Map class'i kullanacagiz
          */
-        HashMap<String,Object> actualData = response.as(HashMap.class);
+        HashMap<String, Object> actualData = response.as(HashMap.class);
         System.out.println("actualData Map = " + actualData);
 
-        assertEquals(expectedData.get("userId"),actualData.get("userId"));
-        assertEquals(expectedData.get("title"),actualData.get("title"));
-        assertEquals(expectedData.get("completed"),actualData.get("completed"));
+        assertEquals(expectedData.get("userId"), actualData.get("userId"));
+        assertEquals(expectedData.get("title"), actualData.get("title"));
+        assertEquals(expectedData.get("completed"), actualData.get("completed"));
     }
 }
