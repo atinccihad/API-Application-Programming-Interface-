@@ -7,6 +7,7 @@ import java.util.List;
 public class DummyRestApiTestData {
 
     public HashMap<String, Object> setUpTestData() {
+
         List<Integer> yaslar = new ArrayList<>();
         yaslar.add(40);
         yaslar.add(21);
