@@ -28,7 +28,6 @@ public class GetRequest_17 extends DummyRestestapiexampleTestBase {
         },
         seklinde oldugunu test edin.
         */
-
     @Test
     public void test() {
         specDummy.pathParam("first", "employees");

@@ -57,41 +57,40 @@ public class GetRequest_15_MatchersClass extends DummyRestestapiexampleTestBase 
 
         // 5. calisan isminin "Airi Satou" oldugunu
         assertEquals(expectedDataMap.get("besinciCalisan"),
-                ((Map) ((List) actualDataMap.get("data")).get(4)).get("employee_name"));
+                ((Map<?, ?>) ((List<?>) actualDataMap.get("data")).get(4)).get("employee_name"));
 
         // calisan sayisinin 24 oldugunu
         assertEquals(expectedDataMap.get("calisanSayisi"),
-                ((List) actualDataMap.get("data")).size());
+                ((List<?>) actualDataMap.get("data")).size());
 
         // Sondan ikinci calisanin maasinin 106450 oldugunu
 
         // once actualData'dan bize donen list'in size'ini almaliyiz
-        int dataSize = ((List) actualDataMap.get("data")).size();
+        int dataSize = ((List<?>) actualDataMap.get("data")).size();
 
         assertEquals(expectedDataMap.get("sondanIkinciCalisanMaasi"),
-                ((Map) ((List) actualDataMap.get("data")).get(dataSize - 2)).get("employee_salary"));
+                ((Map<?, ?>) ((List<?>) actualDataMap.get("data")).get(dataSize - 2)).get("employee_salary"));
 
         // 40,21 ve 19 yaslarinda calisanlar olup olmadigini
         List<Integer> actualYasListesi = new ArrayList<>();
 
         for (int i = 0; i < dataSize; i++) {
-            actualYasListesi.add((Integer) ((Map) ((List) actualDataMap.get("data")).get(i)).get("employee_age"));
+            actualYasListesi.add((Integer) ((Map<?, ?>) ((List<?>) actualDataMap.get("data")).get(i)).get("employee_age"));
         }
 
-        assertTrue(actualYasListesi.containsAll((List) expectedDataMap.get("arananYaslar")));
+        assertTrue(actualYasListesi.containsAll((List<?>) expectedDataMap.get("arananYaslar")));
 
         // 11. calisan bilgilerini dogrulayin
-        assertEquals(((Map) expectedDataMap.get("onbirinciCalisan")).get("employee_name"),
-                ((Map) ((List) actualDataMap.get("data")).get(10)).get("employee_name"));
+        assertEquals(((Map<?, ?>) expectedDataMap.get("onbirinciCalisan")).get("employee_name"),
+                ((Map<?, ?>) ((List<?>) actualDataMap.get("data")).get(10)).get("employee_name"));
 
-        assertEquals(((Map) expectedDataMap.get("onbirinciCalisan")).get("employee_salary"),
-                ((Map) ((List) actualDataMap.get("data")).get(10)).get("employee_salary"));
+        assertEquals(((Map<?, ?>) expectedDataMap.get("onbirinciCalisan")).get("employee_salary"),
+                ((Map<?, ?>) ((List<?>) actualDataMap.get("data")).get(10)).get("employee_salary"));
 
-        assertEquals(((Map) expectedDataMap.get("onbirinciCalisan")).get("employee_age"),
-                ((Map) ((List) actualDataMap.get("data")).get(10)).get("employee_age"));
+        assertEquals(((Map<?, ?>) expectedDataMap.get("onbirinciCalisan")).get("employee_age"),
+                ((Map<?, ?>) ((List<?>) actualDataMap.get("data")).get(10)).get("employee_age"));
 
-        assertEquals(((Map) expectedDataMap.get("onbirinciCalisan")).get("profile_image"),
-                ((Map) ((List) actualDataMap.get("data")).get(10)).get("profile_image"));
-
+        assertEquals(((Map<?, ?>) expectedDataMap.get("onbirinciCalisan")).get("profile_image"),
+                ((Map<?, ?>) ((List<?>) actualDataMap.get("data")).get(10)).get("profile_image"));
     }
 }
