@@ -84,6 +84,7 @@ public class DummyRestApiTestData {
         expectedData.put("statusCode",200);
         expectedData.put("enYuksekMaas",725000);
         expectedData.put("enKucukYas",19);
+        expectedData.put("enYuksekYas",66);
         expectedData.put("ikinciEnYuksekMaas",675000);
 
         HashMap<String,Object> maasListesi =new HashMap<>();

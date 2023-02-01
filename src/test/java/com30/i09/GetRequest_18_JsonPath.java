@@ -61,15 +61,15 @@ public class GetRequest_18_JsonPath extends DummyResttapiexampleTestBase {
         //       40,21 ve 19 yaslarinda calisanlar olup olmadigini,
         assertTrue(jsonPath.getList("data.employee_age").containsAll((List) expectedDataMap.get("arananYaslar")));
         //       11. calisan bilgilerinin .... oldugunu dogrulayin
-        assertEquals(((Map) expectedDataMap.get("onbirinci")).get("id"),
+        assertEquals(((Map) expectedDataMap.get("onbirinciCalisan")).get("id"),
                 jsonPath.getInt("data[10].id"));
-        assertEquals(((Map) expectedDataMap.get("onbirinci")).get("employee_name"),
+        assertEquals(((Map) expectedDataMap.get("onbirinciCalisan")).get("employee_name"),
                 jsonPath.getString("data[10].employee_name"));
-        assertEquals(((Map) expectedDataMap.get("onbirinci")).get("employee_salary"),
+        assertEquals(((Map) expectedDataMap.get("onbirinciCalisan")).get("employee_salary"),
                 jsonPath.getInt("data[10].employee_salary"));
-        assertEquals(((Map) expectedDataMap.get("onbirinci")).get("employee_age"),
+        assertEquals(((Map) expectedDataMap.get("onbirinciCalisan")).get("employee_age"),
                 jsonPath.getInt("data[10].employee_age"));
-        assertEquals(((Map) expectedDataMap.get("onbirinci")).get("profile_image"),
+        assertEquals(((Map) expectedDataMap.get("onbirinciCalisan")).get("profile_image"),
                 jsonPath.getString("data[10].profile_image"));
     }
 }
