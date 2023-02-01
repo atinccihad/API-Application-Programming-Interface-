@@ -79,4 +79,39 @@ public class DummyRestApiTestData {
 
         return expectedData;
     }
+    public HashMap<String, Integer> setUpTestData02(){
+        HashMap<String,Integer> expectedData = new HashMap<>();
+        expectedData.put("statusCode",200);
+        expectedData.put("enYuksekMaas",725000);
+        expectedData.put("enKucukYas",19);
+        expectedData.put("ikinciEnYuksekMaas",675000);
+
+        HashMap<String,Object> maasListesi =new HashMap<>();
+        maasListesi.put("1. KisiMaasi",320800);
+        maasListesi.put("2. KisiMaasi",170750);
+        maasListesi.put("3. KisiMaasi",86000);
+        maasListesi.put("4. KisiMaasi",433060);
+        maasListesi.put("5. KisiMaasi",162700);
+        maasListesi.put("6. KisiMaasi",372000);
+        maasListesi.put("7. KisiMaasi",137500);
+        maasListesi.put("8. KisiMaasi",327900);
+        maasListesi.put("9. KisiMaasi",205500);
+        maasListesi.put("10. KisiMaasi",103600);
+        maasListesi.put("11. KisiMaasi",90560);
+        maasListesi.put("12. KisiMaasi",342000);
+        maasListesi.put("13. KisiMaasi",470600);
+        maasListesi.put("14. KisiMaasi",313500);
+        maasListesi.put("15. KisiMaasi",385750);
+        maasListesi.put("16. KisiMaasi",198500);
+        maasListesi.put("17. KisiMaasi",725000);
+        maasListesi.put("18. KisiMaasi",237500);
+        maasListesi.put("19. KisiMaasi",132000);
+        maasListesi.put("20. KisiMaasi",217500);
+        maasListesi.put("21. KisiMaasi",345000);
+        maasListesi.put("22. KisiMaasi",675000);
+        maasListesi.put("23. KisiMaasi",106450);
+        maasListesi.put("24. KisiMaasi",85600);
+
+        return expectedData;
+    }
 }
