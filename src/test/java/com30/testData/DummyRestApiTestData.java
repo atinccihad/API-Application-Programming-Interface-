@@ -126,7 +126,34 @@ public class DummyRestApiTestData {
         return requestBody;
     }
 
-    public void setUpExpectedData(){
+    public HashMap<String, Object> setUpExpectedData() {
+    /*
+    {
+    "status": "success",
+    "data": {
+        "name": "atinc",
+        "salary": "55",
+        "age": "35",
+        "profile_image": null,
+        "id": 7467
+     },
+    "message": "Successfully! Record has been added."
+    }
+    */
+        /*
+        HashMap<String, Object> data = new HashMap<>();
+        data.put("name", "atinc");
+        data.put("salary", "123000");
+        data.put("age", "35");
+*/
+        //data.put("id", 7467);
 
+        HashMap<String, Object> expectedData = new HashMap<>();
+        expectedData.put("statusCode", 200);
+        expectedData.put("status", "success");
+        // expectedData.put("data", data);
+        expectedData.put("message", "Successfully! Record has been added.");
+
+        return expectedData;
     }
 }
