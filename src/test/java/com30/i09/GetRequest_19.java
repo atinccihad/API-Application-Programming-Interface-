@@ -66,7 +66,7 @@ public class GetRequest_19 extends DummyResttapiexampleTestBase {
         //       status code : 200,
         assertEquals(expectedDataMap.get("statusCode"), (Integer) response.getStatusCode());
 
-        //       En yuksek maasin 725000 oldugunu,
+        //       En yuksek maasin 725000 oldug
         List<Integer> maasListesiJson = json.getList("data.employee_salary");
         Collections.sort(maasListesiJson);
         assertEquals(expectedDataMap.get("enYuksekMaas"), maasListesiJson.get(maasListesiJson.size() - 1));
