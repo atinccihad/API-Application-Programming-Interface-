@@ -22,10 +22,11 @@ public class JsonPlaceHolderTestData {
 
     public JSONObject setupTestPostData() {
         JSONObject expectedRequest = new JSONObject();
+
+        expectedRequest.put("statusCode", 201);
         expectedRequest.put("userId", 55);
         expectedRequest.put("title", "Tidy your room");
         expectedRequest.put("completed", false);
-
 
         return expectedRequest;
     }
