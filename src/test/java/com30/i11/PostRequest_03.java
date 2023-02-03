@@ -10,30 +10,28 @@ import org.json.JSONObject;
 import org.junit.Test;
 
 import java.util.HashMap;
-import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertEquals;
 
 public class PostRequest_03 extends JsonPlaceHolderTestBase {
-  /*
-  https://jsonplaceholder.typicode.com/todos URL'ine asgidaki body gonderildiginde,
-  statusCode : 201
-  {
-  "userId":55,
-  "title":"Tidy your room",
-  "completed":false
-  }
-  Donen response'un Status kodunun 201 ve response body'nin asagidaki gibi oldugunu test edin,
-  {
-  "userId":55,
-  "title":"Tidy your room",
-  "completed":false,
-  "id":...
-  }
-   */
-
+    /*
+    https://jsonplaceholder.typicode.com/todos URL'ine asgidaki body gonderildiginde,
+    statusCode : 201
+    {
+    "userId":55,
+    "title":"Tidy your room",
+    "completed":false
+    }
+    Donen response'un Status kodunun 201 ve response body'nin asagidaki gibi oldugunu test edin,
+    {
+    "userId":55,
+    "title":"Tidy your room",
+    "completed":false,
+    "id":...
+    }
+     */
     @Test
     public void test() {
         specJson.pathParam("first", "todos");
