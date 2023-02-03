@@ -1,5 +1,7 @@
 package com30.testData;
 
+import org.json.JSONObject;
+
 import java.util.HashMap;
 
 public class RestfulBookerHerokuappTestData {
@@ -19,4 +21,20 @@ public class RestfulBookerHerokuappTestData {
 
         return expectedData;
     }
+
+    public JSONObject setUpTestAndRequestData() {
+        JSONObject bookingdates = new JSONObject();
+        bookingdates.put("checkin", "2021-01-05");
+        bookingdates.put("checkout", "2021-01-10");
+
+        JSONObject expectedRequest = new JSONObject();
+        expectedRequest.put("firstname", "cihad");
+        expectedRequest.put("lastname", "atinc");
+        expectedRequest.put("totalprice", 123);
+        expectedRequest.put("depositpaid", false);
+        expectedRequest.put("bookingdates", bookingdates);
+
+        return expectedRequest;
+    }
+
 }

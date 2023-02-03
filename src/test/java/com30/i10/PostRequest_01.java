@@ -36,7 +36,7 @@ public class PostRequest_01 extends DummyResttapiexampleTestBase {
         HashMap<String, Object> expectedDataMap = obje.setUpExpectedData();
 
         Response response = given()
-                .accept(ContentType.JSON)
+                .accept("application/json")
                 .spec(specDummy)
                 .auth()
                 .basic("admin", "password123")
@@ -57,6 +57,5 @@ public class PostRequest_01 extends DummyResttapiexampleTestBase {
 
         assertEquals(expectedDataMap.get("status"), jsonPath.getString("status"));
         assertEquals(expectedDataMap.get("message"), jsonPath.getString("message"));
-
     }
 }
