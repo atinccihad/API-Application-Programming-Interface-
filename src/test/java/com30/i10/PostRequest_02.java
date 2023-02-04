@@ -84,7 +84,5 @@ public class PostRequest_02 extends RestfulBookerHerokuappTestBase {
                 , jsonPath.getString("booking.bookingdates.checkin"));
         assertEquals(expectedRequestData.getJSONObject("bookingdates").getString("checkout")
                 , jsonPath.getString("booking.bookingdates.checkout"));
-
-
     }
 }
