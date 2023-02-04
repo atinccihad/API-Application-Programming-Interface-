@@ -11,7 +11,7 @@ import org.junit.Test;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class PutRequest01 extends JsonPlaceHolderTestBase {
+public class PutRequest_01 extends JsonPlaceHolderTestBase {
     /*
   https://jsonplaceholder.typicode.com/todos/198 URL'ine asgidaki body gonderildiginde,
   {
