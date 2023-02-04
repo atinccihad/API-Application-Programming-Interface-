@@ -159,13 +159,13 @@ public class DummyRestApiTestData {
         return expectedData;
     }
 
-    public JSONObject setupDeleteExpectedData(){
-        JSONObject expectedData = new JSONObject();
+    public JSONObject setupDeleteExpectedData() {
 
-        expectedData.put("statusCode",200);
-        expectedData.put("status","success");
-        expectedData.put("data","2");
-        expectedData.put("message","Successfully! Record has been deleted");
+        JSONObject expectedData = new JSONObject();
+        expectedData.put("statusCode", 200);
+        expectedData.put("status", "success");
+        expectedData.put("data", "2");
+        expectedData.put("message", "Successfully! Record has been deleted");
 
         return expectedData;
     }

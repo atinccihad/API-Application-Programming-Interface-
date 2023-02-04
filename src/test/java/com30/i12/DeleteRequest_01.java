@@ -3,12 +3,17 @@ package com30.i12;
 import com30.testBase.DummyResttapiexampleTestBase;
 import com30.testData.DummyRestApiTestData;
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.json.JSONObject;
 import org.junit.Test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
+import static org.junit.Assert.assertEquals;
 
 public class DeleteRequest_01 extends DummyResttapiexampleTestBase {
     /*
@@ -36,7 +41,7 @@ public class DeleteRequest_01 extends DummyResttapiexampleTestBase {
                 .delete("/{first}/{second}");
         response.prettyPrint();
 
-        // Matchers assertion
+        // Matchers
         response
                 .then()
                 .assertThat()
@@ -44,5 +49,26 @@ public class DeleteRequest_01 extends DummyResttapiexampleTestBase {
                 .body("status", equalTo(expectedData.getString("status")),
                         "data", equalTo(expectedData.getString("data")),
                         "message", equalTo(expectedData.getString("message")));
+
+        // JsonPath
+        JsonPath jsonPath = response.jsonPath();
+
+        assertEquals(expectedData.getInt("statusCode"), response.getStatusCode());
+        assertEquals(expectedData.getString("status"), jsonPath.getString("status"));
+        assertEquals(expectedData.getString("data"), jsonPath.getString("data"));
+        assertEquals(expectedData.getString("message"), jsonPath.getString("message"));
+
+        // De Serialization
+        HashMap<String, Object> actualDataMap = response.as(HashMap.class);
+        System.out.println("actualDataMap = " + actualDataMap);
+
+        assertEquals(expectedData.getInt("statusCode")
+                , response.getStatusCode());
+        assertEquals(expectedData.getString("status")
+                , (actualDataMap.get("status")));
+        assertEquals(expectedData.getString("data")
+                , (actualDataMap.get("data")));
+        assertEquals(expectedData.getString("message")
+                , (actualDataMap.get("message")));
     }
 }
