@@ -1,14 +1,25 @@
 package com30.pojos;
 
 public class JsonPlaceholder_BookingPojo {
-
+    /*
+    {
+     "firstname":"Selim",
+     "lastname":"Ak",
+     "totalprice":15000,
+     "depositpaid":true,
+     "bookingdates":{
+       "checkin":"2020-09-09",
+       "checkout":"2020-09-21"
+         }
+       }
+     */
     // 1- private degiskenler
     private String firstname;
     private String lastname;
     private int totalprice;
     private boolean depositpaid;
-    private JsonPlaceholder_BookingDatesPojo jsonPlaceholderBookingDatesPojo; // daha once olusturdugumuz pojo kalibini datatype olarak belirterek
-                                               // yeni pojonun icerisine aktarmis oldum.
+    private JsonPlaceholder_BookingDatesPojo jsonPlaceholderBookingDatesPojo;
+    // daha once olusturdugumuz pojo kalibini datatype olarak belirterek yeni pojonun icerisine aktarmis oldum.
 
     // 2- getter setter
     public String getFirstname() {

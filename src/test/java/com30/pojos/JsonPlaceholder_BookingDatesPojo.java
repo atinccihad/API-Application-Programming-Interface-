@@ -1,7 +1,12 @@
 package com30.pojos;
 
 public class JsonPlaceholder_BookingDatesPojo {
-
+    /*
+      {
+       "checkin":"2020-09-09",
+       "checkout":"2020-09-21"
+      }
+     */
     // 1- private degiskenler
     private String checkin;
     private String checkout;

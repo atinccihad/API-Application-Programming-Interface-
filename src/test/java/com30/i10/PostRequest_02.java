@@ -18,6 +18,8 @@ public class PostRequest_02 extends RestfulBookerHerokuappTestBase {
     /*
     https://restful-booker.herokuapp.com/booking adresine request
     gonderildiginde, status kodun 200 oldugunu ve donen response body'nin,
+    {
+    "bookingid": 4491,
     "booking": {
         "firstname": "cihad",
         "lastname": "atinc",
@@ -27,6 +29,7 @@ public class PostRequest_02 extends RestfulBookerHerokuappTestBase {
             "checkin": "2021-01-05",
             "checkout": "2021-01-10"
         }
+      }
     }
     seklinde oldugunu test edin.
      */
