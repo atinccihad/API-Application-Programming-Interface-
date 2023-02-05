@@ -1,6 +1,6 @@
 package com30.i12;
 
-import com30.pojos.JsonplaceholderTodosPojo;
+import com30.pojos.Jsonplaceholder_TodosPojo;
 import com30.testBase.JsonPlaceHolderTestBase;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -9,7 +9,7 @@ import org.junit.Test;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class PostRequestwithPojo_01 extends JsonPlaceHolderTestBase {
+public class PostRequestWithPojo_01 extends JsonPlaceHolderTestBase {
     /*
      https://jsonplaceholder.typicode.com/todos URL'ine  bir request olarak gonderildiginde,
      request body,
@@ -32,7 +32,7 @@ public class PostRequestwithPojo_01 extends JsonPlaceHolderTestBase {
     public void test() {
         specJson.pathParam("first", "todos");
 
-        JsonplaceholderTodosPojo requestExpected = new JsonplaceholderTodosPojo(21, 201, "Tidy your room", false);
+        Jsonplaceholder_TodosPojo requestExpected = new Jsonplaceholder_TodosPojo(21, 201, "Tidy your room", false);
         System.out.println("requestExpected = " + requestExpected);
 
         Response response = given()
@@ -45,7 +45,7 @@ public class PostRequestwithPojo_01 extends JsonPlaceHolderTestBase {
         response.prettyPrint();
 
         // De Serialization
-        JsonplaceholderTodosPojo actualData = response.as(JsonplaceholderTodosPojo.class);
+        Jsonplaceholder_TodosPojo actualData = response.as(Jsonplaceholder_TodosPojo.class);
         System.out.println("actualData = " + actualData);
 
         // do assertion

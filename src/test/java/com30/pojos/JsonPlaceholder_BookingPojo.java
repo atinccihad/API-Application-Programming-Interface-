@@ -1,15 +1,16 @@
 package com30.pojos;
 
-public class BookingPojo {
+public class JsonPlaceholder_BookingPojo {
 
+    // 1- private degiskenler
     private String firstname;
     private String lastname;
     private int totalprice;
     private boolean depositpaid;
-    private BookingDatesPojo bookingDatesPojo; // daha once olusturdugumuz pojo kalibini datatype olarak belirterek
+    private JsonPlaceholder_BookingDatesPojo jsonPlaceholderBookingDatesPojo; // daha once olusturdugumuz pojo kalibini datatype olarak belirterek
                                                // yeni pojonun icerisine aktarmis oldum.
 
-    // getter setter
+    // 2- getter setter
     public String getFirstname() {
         return firstname;
     }
@@ -42,35 +43,35 @@ public class BookingPojo {
         this.depositpaid = depositpaid;
     }
 
-    public BookingDatesPojo getBookingDatesPojo() {
-        return bookingDatesPojo;
+    public JsonPlaceholder_BookingDatesPojo getBookingDatesPojo() {
+        return jsonPlaceholderBookingDatesPojo;
     }
 
-    public void setBookingDatesPojo(BookingDatesPojo bookingDatesPojo) {
-        this.bookingDatesPojo = bookingDatesPojo;
+    public void setBookingDatesPojo(JsonPlaceholder_BookingDatesPojo jsonPlaceholderBookingDatesPojo) {
+        this.jsonPlaceholderBookingDatesPojo = jsonPlaceholderBookingDatesPojo;
     }
 
-    // constructor
-    public BookingPojo() {
+    // 3- constructor(parametreli ve parametresiz)
+    public JsonPlaceholder_BookingPojo() {
     }
 
-    public BookingPojo(String firstname, String lastname, int totalprice, boolean depositpaid, BookingDatesPojo bookingDatesPojo) {
+    public JsonPlaceholder_BookingPojo(String firstname, String lastname, int totalprice, boolean depositpaid, JsonPlaceholder_BookingDatesPojo jsonPlaceholderBookingDatesPojo) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.totalprice = totalprice;
         this.depositpaid = depositpaid;
-        this.bookingDatesPojo = bookingDatesPojo;
+        this.jsonPlaceholderBookingDatesPojo = jsonPlaceholderBookingDatesPojo;
     }
 
-    // toString()
+    // 4- toString()
     @Override
     public String toString() {
-        return "BookingPojo{" +
+        return "JsonPlaceholder_BookingPojo{" +
                 "firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", totalprice=" + totalprice +
                 ", depositpaid=" + depositpaid +
-                ", bookingDatesPojo=" + bookingDatesPojo +
+                ", bookingDatesPojo=" + jsonPlaceholderBookingDatesPojo +
                 '}';
     }
 }

@@ -9,7 +9,6 @@ import org.json.JSONObject;
 import org.junit.Test;
 
 import java.util.HashMap;
-import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -49,7 +48,6 @@ public class DeleteRequest_01 extends DummyResttapiexampleTestBase {
                 .body("status", equalTo(expectedData.getString("status")),
                         "data", equalTo(expectedData.getString("data")),
                         "message", equalTo(expectedData.getString("message")));
-
         // JsonPath
         JsonPath jsonPath = response.jsonPath();
 

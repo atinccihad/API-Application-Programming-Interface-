@@ -1,6 +1,6 @@
 package com30.pojos;
 
-public class BookingDatesPojo {
+public class JsonPlaceholder_BookingDatesPojo {
 
     // 1- private degiskenler
     private String checkin;
@@ -24,10 +24,10 @@ public class BookingDatesPojo {
     }
 
     // 3- constructor(parametreli ve parametresiz)
-    public BookingDatesPojo() {
+    public JsonPlaceholder_BookingDatesPojo() {
     }
 
-    public BookingDatesPojo(String checkin, String checkout) {
+    public JsonPlaceholder_BookingDatesPojo(String checkin, String checkout) {
         this.checkin = checkin;
         this.checkout = checkout;
     }
@@ -35,7 +35,7 @@ public class BookingDatesPojo {
     // 4- toString()
     @Override
     public String toString() {
-        return "BookingDatesPojo{" +
+        return "JsonPlaceholder_BookingDatesPojo{" +
                 "checkin='" + checkin + '\'' +
                 ", checkout='" + checkout + '\'' +
                 '}';

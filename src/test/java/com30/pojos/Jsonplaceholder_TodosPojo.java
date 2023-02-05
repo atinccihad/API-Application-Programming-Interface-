@@ -1,12 +1,12 @@
 package com30.pojos;
 
-public class JsonplaceholderTodosPojo {
+public class Jsonplaceholder_TodosPojo {
     /*
     {
     "userId":21,
-    "title":"API working..",
-    "completed":false,
     "id": 198
+    "title":"API working..",
+    "completed":false
     }
      */
 
@@ -50,20 +50,20 @@ public class JsonplaceholderTodosPojo {
     }
 
     // 3- parametreli ve parametresiz constructor olusturuyoruz
-    public JsonplaceholderTodosPojo() {
+    public Jsonplaceholder_TodosPojo() {
     }
 
-    public JsonplaceholderTodosPojo(int userId, int id, String title, boolean completed) {
+    public Jsonplaceholder_TodosPojo(int userId, int id, String title, boolean completed) {
         this.userId = userId;
         this.id = id;
         this.title = title;
         this.completed = completed;
     }
 
-    // 4- toString methodu olusturuyoruz
+    // 4- toString() methodu olusturuyoruz
     @Override
     public String toString() {
-        return "JsonplaceholderTodosPojo{" +
+        return "Jsonplaceholder_TodosPojo{" +
                 "userId=" + userId +
                 ", id=" + id +
                 ", title='" + title + '\'' +

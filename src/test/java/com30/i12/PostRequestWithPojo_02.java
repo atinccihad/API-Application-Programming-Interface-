@@ -1,6 +1,6 @@
 package com30.i12;
 
-public class PostRequestwithPojo_02 {
+public class PostRequestWithPojo_02 {
     /*
      https://jsonplaceholder.typicode.com/todos
      URL'ine  bir request olarak gonderildiginde,
