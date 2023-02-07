@@ -37,7 +37,7 @@ Client ve Server arasındaki iletişim, request ve response lar ile yapılır::<
 <h3>API Testinde Tam Olarak Neyin Doğrulanması Gerekir?</h3>
 <br>API testinde, bizler API’a bilinen verilerle bir istek göndeririz ve cevabı test ederiz.
 <br>1)HTTP Status Kodları
-<br>2)Data Doğruluğu 
+<br>2) Data Doğruluğu 
 
 <h3>Ortak HTTP status Kodları</h3>
 <br>1) 200 (OK) ==> Talep karşılandı. Request gerçekleşti.
@@ -61,7 +61,7 @@ Client ve Server arasındaki iletişim, request ve response lar ile yapılır::<
 <br>-	REST , XML ve JSON (Java Script Object Notation) formatlarının ikisini de kullanabilir. Bu sebeple SOAP dan daha yaygın bir kullanımı vardır.
 <h3>Bir REST Request’i Nelerden Oluşur?</h3>
 <br>1) Bir HTTP yöntemi, ne tür bir işlemin gerçekleştirileceğini tanımlar.
-<br>    A) GET, dataları okumak içindir. ==> Bu sitede hotel arayalım www.hotels.com
+<br>   A) GET, dataları okumak içindir. ==> Bu sitede hotel arayalım www.hotels.com
 <br>   B) POST, yeni data oluşturmak içindir. ==> Sitede hotel rezervasyonu yapalım www.hotels.com
 <br>   C) PUT, dataları tamamen güncellemek içindir. ==>Tüm rezervasyon datasını değiştirelim    www.hotels.com
 <br>   D) PATCH, dataları kısmen güncellemek içindir. ==> Sadece rezervasyon tarihini değiştirelim www.hotels.com
@@ -119,4 +119,3 @@ Client ve Server arasındaki iletişim, request ve response lar ile yapılır::<
 <br>4)	When REST API ye GET sorgusu gönderdiğimizde URL http://dummy.restapiexample.com/api/v1/employee/1 
      <br>And Accept formatı “application/JSON” olmalıdır Then HTTP Status Code 200 olmalıdır 
      <br>And employee name “Tiger Nixon” olmalıdır And employee salary “320800” olmalıdır And employee age “61” olmalıdır
-
