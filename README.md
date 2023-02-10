@@ -36,7 +36,7 @@ Client ve Server arasındaki iletişim, request ve response lar ile yapılır::<
 
 <h3>API Testinde Tam Olarak Neyin Doğrulanması Gerekir?</h3>
 <br>API testinde, bizler API’a bilinen verilerle bir istek göndeririz ve cevabı test ederiz.
-<br>1)HTTP Status Kodları
+<br>1) HTTP Status Kodları
 <br>2) Data Doğruluğu 
 
 <h3>Ortak HTTP status Kodları</h3>
@@ -48,7 +48,7 @@ Client ve Server arasındaki iletişim, request ve response lar ile yapılır::<
 <br>6) 404 (NOT FOUND) ==> Aranılan data bulunamadı.
 <br>7) 500 (INTERNAL SERVER ERROR) ==> Server kaynaklı bir hatadır, server’ın düzelmesini bekleriz.
 
-<h3>API Testlerinde Hani Programları Kullanırız?</h3> 
+<h3>API Testlerinde Hangi Programları Kullanırız?</h3> 
 <br>1) Postman, geliştiricilerin API’ları oluşturmasını, paylaşmasını ve test etmesini ve belgelemesini sağlayan popüler bir uygulamadır.
 <br>2) SOAP UI SOAP: Simple Object Access Protocol(Basit Nesne Erişim Protokolü) Web uygulamalarının internet üzerinden haberleşebilmesi önemlidir. 
 <br>HTTP, tüm internet tarayıcıları ve sunucuları tarafından desteklendiğinden, uygulamalar arasında iletişim kurmanın en iyi yolu HTTP üzerindendir.SOAP bunu başarmak için oluşturulmuştur. 
@@ -99,7 +99,7 @@ Client ve Server arasındaki iletişim, request ve response lar ile yapılır::<
 <br>2) Seçim
 <br>3) Güncellemeye ihtiyacınız varsa
 <br>4) Gönder
-<br>5)İsterseniz kayıt edebilirsiniz
+<br>5) İsterseniz kayıt edebilirsiniz
 <h3>API Test Case‘leri Nasıl Yapılır ?</h3>
 <br>Aşağıdaki testleri Postman Requestlerini kullanarak yapalım (Manually)
 <br>1)	When REST API ye GET sorgusu gönderdiğimizde 
