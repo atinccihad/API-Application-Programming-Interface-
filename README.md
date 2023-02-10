@@ -54,7 +54,7 @@ Client ve Server arasındaki iletişim, request ve response lar ile yapılır::<
 <br>HTTP, tüm internet tarayıcıları ve sunucuları tarafından desteklendiğinden, uygulamalar arasında iletişim kurmanın en iyi yolu HTTP üzerindendir.SOAP bunu başarmak için oluşturulmuştur. 
 <br>SOAP, farklı teknolojiler ve programlama dilleri ile farklı işletim sistemlerinde çalışan uygulamalar arasında iletişim kurmak için bir yol veya biçim sağlar. 
 <br>SOAP, platformlardan bağımsızdır.
-<h3>3) REST / RestFul</h3>
+<br>3) REST / RestFul
 <br>REST:  REpresentational State Transfer
 <br>-	REST sistemlerin birbirleri ile iletişim kurmalarını kolaylaştırır.
 <br>-	REST mimarisinde, client’ lar dataları almak (retrive) veya değiştirmek (modify) için request gönderir ve server’lar bu request’lere response gönderir.
