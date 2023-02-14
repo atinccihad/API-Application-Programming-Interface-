@@ -36,8 +36,8 @@ Client ve Server arasındaki iletişim, request ve response lar ile yapılır::<
 
 <h3>API Testinde Tam Olarak Neyin Doğrulanması Gerekir?</h3>
 <br>API testinde, bizler API’a bilinen verilerle bir istek göndeririz ve cevabı test ederiz.
-<br>1)HTTP Status Kodları
-<br>2)Data Doğruluğu 
+<br>1) HTTP Status Kodları
+<br>2) Data Doğruluğu 
 
 <h3>Ortak HTTP status Kodları</h3>
 <br>1) 200 (OK) ==> Talep karşılandı. Request gerçekleşti.
@@ -48,20 +48,20 @@ Client ve Server arasındaki iletişim, request ve response lar ile yapılır::<
 <br>6) 404 (NOT FOUND) ==> Aranılan data bulunamadı.
 <br>7) 500 (INTERNAL SERVER ERROR) ==> Server kaynaklı bir hatadır, server’ın düzelmesini bekleriz.
 
-<h3>API Testlerinde Hani Programları Kullanırız?</h3> 
+<h3>API Testlerinde Hangi Programları Kullanırız?</h3> 
 <br>1) Postman, geliştiricilerin API’ları oluşturmasını, paylaşmasını ve test etmesini ve belgelemesini sağlayan popüler bir uygulamadır.
 <br>2) SOAP UI SOAP: Simple Object Access Protocol(Basit Nesne Erişim Protokolü) Web uygulamalarının internet üzerinden haberleşebilmesi önemlidir. 
 <br>HTTP, tüm internet tarayıcıları ve sunucuları tarafından desteklendiğinden, uygulamalar arasında iletişim kurmanın en iyi yolu HTTP üzerindendir.SOAP bunu başarmak için oluşturulmuştur. 
 <br>SOAP, farklı teknolojiler ve programlama dilleri ile farklı işletim sistemlerinde çalışan uygulamalar arasında iletişim kurmak için bir yol veya biçim sağlar. 
 <br>SOAP, platformlardan bağımsızdır.
-<h3>3) REST / RestFul</h3>
+<br>3) REST / RestFul
 <br>REST:  REpresentational State Transfer
 <br>-	REST sistemlerin birbirleri ile iletişim kurmalarını kolaylaştırır.
 <br>-	REST mimarisinde, client’ lar dataları almak (retrive) veya değiştirmek (modify) için request gönderir ve server’lar bu request’lere response gönderir.
 <br>-	REST , XML ve JSON (Java Script Object Notation) formatlarının ikisini de kullanabilir. Bu sebeple SOAP dan daha yaygın bir kullanımı vardır.
 <h3>Bir REST Request’i Nelerden Oluşur?</h3>
 <br>1) Bir HTTP yöntemi, ne tür bir işlemin gerçekleştirileceğini tanımlar.
-<br>    A) GET, dataları okumak içindir. ==> Bu sitede hotel arayalım www.hotels.com
+<br>   A) GET, dataları okumak içindir. ==> Bu sitede hotel arayalım www.hotels.com
 <br>   B) POST, yeni data oluşturmak içindir. ==> Sitede hotel rezervasyonu yapalım www.hotels.com
 <br>   C) PUT, dataları tamamen güncellemek içindir. ==>Tüm rezervasyon datasını değiştirelim    www.hotels.com
 <br>   D) PATCH, dataları kısmen güncellemek içindir. ==> Sadece rezervasyon tarihini değiştirelim www.hotels.com
@@ -99,7 +99,7 @@ Client ve Server arasındaki iletişim, request ve response lar ile yapılır::<
 <br>2) Seçim
 <br>3) Güncellemeye ihtiyacınız varsa
 <br>4) Gönder
-<br>5)İsterseniz kayıt edebilirsiniz
+<br>5) İsterseniz kayıt edebilirsiniz
 <h3>API Test Case‘leri Nasıl Yapılır ?</h3>
 <br>Aşağıdaki testleri Postman Requestlerini kullanarak yapalım (Manually)
 <br>1)	When REST API ye GET sorgusu gönderdiğimizde 
@@ -119,4 +119,3 @@ Client ve Server arasındaki iletişim, request ve response lar ile yapılır::<
 <br>4)	When REST API ye GET sorgusu gönderdiğimizde URL http://dummy.restapiexample.com/api/v1/employee/1 
      <br>And Accept formatı “application/JSON” olmalıdır Then HTTP Status Code 200 olmalıdır 
      <br>And employee name “Tiger Nixon” olmalıdır And employee salary “320800” olmalıdır And employee age “61” olmalıdır
-
