@@ -5,12 +5,14 @@ import com30.testData.JsonPlaceHolderTestData;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.hamcrest.Matchers;
 import org.json.JSONObject;
 import org.junit.Test;
 
 import java.util.HashMap;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertEquals;
 
 public class PatchRequest_01 extends JsonPlaceHolderTestBase {
@@ -32,19 +34,19 @@ public class PatchRequest_01 extends JsonPlaceHolderTestBase {
     @Test
     public void test() {
         // url
-        specJson.pathParams("first","todos","second",198);
+        specJson.pathParams("first", "todos", "second", 198);
         // expected ve request data olustur
         JsonPlaceHolderTestData testData = new JsonPlaceHolderTestData();
         JSONObject requestData = testData.setupPatchRequestData();
         System.out.println("requestData = " + requestData);
-        JSONObject expectedData =testData.setupPatchExpectedData();
+        JSONObject expectedData = testData.setupPatchExpectedData();
         System.out.println("expectedData = " + expectedData);
 
         // send the request
         Response response = given()
                 .contentType(ContentType.JSON)
                 .spec(specJson)
-                .auth().basic("admin","password123")
+                .auth().basic("admin", "password123")
                 .body(requestData.toString())
                 .when()
                 .patch("/{first}/{second}");
@@ -72,6 +74,14 @@ public class PatchRequest_01 extends JsonPlaceHolderTestBase {
         assertEquals(expectedData.getString("title"), (actualDataMap.get("title")));
         assertEquals(expectedData.getInt("id"), (actualDataMap.get("id")));
         assertEquals(expectedData.getBoolean("completed"), (actualDataMap.get("completed")));
+
+        // Matchers class
+        response.then().assertThat().statusCode(200).body(
+                                "userId", equalTo(10),
+                "id", equalTo(198),
+                                     "title", equalTo("API working.."),
+                                     "completed", equalTo(true)
+        );
 
     }
 }
