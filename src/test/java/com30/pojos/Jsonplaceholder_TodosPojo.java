@@ -10,7 +10,7 @@ public class Jsonplaceholder_TodosPojo {
     }
      */
 
-    // 1- degiskenleri private yapiyoruz
+    // 1- degiskenleri private olarak tanimliyoruz
     private int userId;
     private int id;
     private String title;
@@ -50,9 +50,11 @@ public class Jsonplaceholder_TodosPojo {
     }
 
     // 3- parametreli ve parametresiz constructor olusturuyoruz
+    // parametresiz constructor
     public Jsonplaceholder_TodosPojo() {
-    }
 
+    }
+    // parametreli constructor
     public Jsonplaceholder_TodosPojo(int userId, int id, String title, boolean completed) {
         this.userId = userId;
         this.id = id;

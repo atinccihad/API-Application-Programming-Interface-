@@ -1,13 +1,13 @@
 package com30.i05;
 
-import com30.testBase.JsonPlaceHolderTestBase;
+import com30.baseUrls.JsonPlaceHolderBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
-public class GetRequest_06 extends JsonPlaceHolderTestBase {
+public class GetRequest_06 extends JsonPlaceHolderBaseUrl {
     /*
     https://jsonplaceholder.typicode.com/todos/123 url'ine,
     accept type'i "application-json" olan get request'i yolladigimda gelen response'un

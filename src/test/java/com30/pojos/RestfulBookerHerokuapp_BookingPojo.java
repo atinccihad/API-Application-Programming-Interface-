@@ -1,8 +1,9 @@
 package com30.pojos;
 
-import com30.testBase.RestfulBookerHerokuappTestBase;
+import com30.baseUrls.RestfulBookerHerokuappBaseUrl;
+import org.junit.Test;
 
-public class RestfulBookerHerokuapp_BookingPojo extends RestfulBookerHerokuappTestBase {
+public class RestfulBookerHerokuapp_BookingPojo extends RestfulBookerHerokuappBaseUrl {
     /*
     {
     "bookingid": 4491,
@@ -18,4 +19,9 @@ public class RestfulBookerHerokuapp_BookingPojo extends RestfulBookerHerokuappTe
        }
     }
      */
+
+    @Test
+    public void test() {
+
+    }
 }

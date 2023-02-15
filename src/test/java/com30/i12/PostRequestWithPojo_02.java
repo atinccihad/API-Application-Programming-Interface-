@@ -1,6 +1,6 @@
 package com30.i12;
 
-import com30.testBase.RestfulBookerHerokuappTestBase;
+import com30.baseUrls.RestfulBookerHerokuappBaseUrl;
 import com30.testData.RestfulBookerHerokuappTestData;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class PostRequestWithPojo_02 extends RestfulBookerHerokuappTestBase {
+public class PostRequestWithPojo_02 extends RestfulBookerHerokuappBaseUrl {
     /*
      https://restful-booker.herokuapp.com/booking
      URL'ine  bir request olarak

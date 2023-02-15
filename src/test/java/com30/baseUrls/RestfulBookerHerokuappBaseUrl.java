@@ -1,10 +1,10 @@
-package com30.testBase;
+package com30.baseUrls;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Before;
 
-public class RestfulBookerHerokuappTestBase {
+public class RestfulBookerHerokuappBaseUrl {
 
     protected RequestSpecification specRestful;
 

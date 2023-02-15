@@ -1,6 +1,6 @@
 package com30.i12;
 
-import com30.testBase.DummyResttapiexampleTestBase;
+import com30.baseUrls.DummyResttapiexampleBaseUrl;
 import com30.testData.DummyRestApiTestData;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
@@ -14,7 +14,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertEquals;
 
-public class DeleteRequest_01 extends DummyResttapiexampleTestBase {
+public class DeleteRequest_01 extends DummyResttapiexampleBaseUrl {
     /*
     https://dummy.restapiexample.com/v1/delete/2 URL'ine bir DELETE request gonderildiginde,
     Donen response'un Status kodunun 200 ve response body'nin asagidaki gibi oldugunu test edin,
@@ -45,16 +45,20 @@ public class DeleteRequest_01 extends DummyResttapiexampleTestBase {
                 .then()
                 .assertThat()
                 .statusCode(expectedData.getInt("statusCode"))
-                .body("status", equalTo(expectedData.getString("status")),
+                .body(                  "status", equalTo(expectedData.getString("status")),
                         "data", equalTo(expectedData.getString("data")),
-                        "message", equalTo(expectedData.getString("message")));
+                                             "message", equalTo(expectedData.getString("message")));
         // JsonPath
         JsonPath jsonPath = response.jsonPath();
 
-        assertEquals(expectedData.getInt("statusCode"), response.getStatusCode());
-        assertEquals(expectedData.getString("status"), jsonPath.getString("status"));
-        assertEquals(expectedData.getString("data"), jsonPath.getString("data"));
-        assertEquals(expectedData.getString("message"), jsonPath.getString("message"));
+        assertEquals(expectedData.getInt("statusCode"),
+                response.getStatusCode());
+        assertEquals(expectedData.getString("status"),
+                jsonPath.getString("status"));
+        assertEquals(expectedData.getString("data"),
+                jsonPath.getString("data"));
+        assertEquals(expectedData.getString("message"),
+                jsonPath.getString("message"));
 
         // De Serialization
         HashMap<String, Object> actualDataMap = response.as(HashMap.class);

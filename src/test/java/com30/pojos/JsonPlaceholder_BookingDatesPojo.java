@@ -16,9 +16,7 @@ public class JsonPlaceholder_BookingDatesPojo {
         return checkin;
     }
 
-    public void setCheckin(String checkin) {
-        this.checkin = checkin;
-    }
+    public void setCheckin(String checkin) {this.checkin = checkin;}
 
     public String getCheckout() {
         return checkout;
@@ -29,9 +27,10 @@ public class JsonPlaceholder_BookingDatesPojo {
     }
 
     // 3- constructor(parametreli ve parametresiz)
+    // parametresiz constructor
     public JsonPlaceholder_BookingDatesPojo() {
     }
-
+    // parametreli constructor
     public JsonPlaceholder_BookingDatesPojo(String checkin, String checkout) {
         this.checkin = checkin;
         this.checkout = checkout;
@@ -45,4 +44,5 @@ public class JsonPlaceholder_BookingDatesPojo {
                 ", checkout='" + checkout + '\'' +
                 '}';
     }
+
 }

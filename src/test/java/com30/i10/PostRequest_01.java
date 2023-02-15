@@ -1,8 +1,7 @@
 package com30.i10;
 
-import com30.testBase.DummyResttapiexampleTestBase;
+import com30.baseUrls.DummyResttapiexampleBaseUrl;
 import com30.testData.DummyRestApiTestData;
-import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
@@ -12,7 +11,7 @@ import java.util.HashMap;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class PostRequest_01 extends DummyResttapiexampleTestBase {
+public class PostRequest_01 extends DummyResttapiexampleBaseUrl {
       /*
        https://dummy.restapiexample.com/api/v1/employees url'ine post request olarak,
        {

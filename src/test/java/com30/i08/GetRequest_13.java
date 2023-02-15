@@ -1,6 +1,6 @@
 package com30.i08;
 
-import com30.testBase.RestfulBookerHerokuappTestBase;
+import com30.baseUrls.RestfulBookerHerokuappBaseUrl;
 import com30.testData.RestfulBookerHerokuappTestData;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -13,7 +13,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class GetRequest_13 extends RestfulBookerHerokuappTestBase {
+public class GetRequest_13 extends RestfulBookerHerokuappBaseUrl {
     /*
     https://restful-booker.herokuapp.com/booking/1 url'ine bir istek gonderildiginde,
     status code : 200,

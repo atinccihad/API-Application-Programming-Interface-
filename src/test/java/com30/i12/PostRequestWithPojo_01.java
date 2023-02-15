@@ -1,7 +1,7 @@
 package com30.i12;
 
 import com30.pojos.Jsonplaceholder_TodosPojo;
-import com30.testBase.JsonPlaceHolderTestBase;
+import com30.baseUrls.JsonPlaceHolderBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
@@ -9,7 +9,7 @@ import org.junit.Test;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class PostRequestWithPojo_01 extends JsonPlaceHolderTestBase {
+public class PostRequestWithPojo_01 extends JsonPlaceHolderBaseUrl {
     /*
      https://jsonplaceholder.typicode.com/todos URL'ine  bir request olarak gonderildiginde,
      request body,

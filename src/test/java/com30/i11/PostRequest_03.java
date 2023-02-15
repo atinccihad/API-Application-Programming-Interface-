@@ -1,11 +1,10 @@
 package com30.i11;
 
-import com30.testBase.JsonPlaceHolderTestBase;
+import com30.baseUrls.JsonPlaceHolderBaseUrl;
 import com30.testData.JsonPlaceHolderTestData;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import org.hamcrest.Matchers;
 import org.json.JSONObject;
 import org.junit.Test;
 
@@ -15,7 +14,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertEquals;
 
-public class PostRequest_03 extends JsonPlaceHolderTestBase {
+public class PostRequest_03 extends JsonPlaceHolderBaseUrl {
     /*
     https://jsonplaceholder.typicode.com/todos URL'ine asgidaki body gonderildiginde,
     statusCode : 201

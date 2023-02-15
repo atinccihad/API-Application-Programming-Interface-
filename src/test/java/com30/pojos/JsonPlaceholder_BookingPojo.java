@@ -19,7 +19,7 @@ public class JsonPlaceholder_BookingPojo {
     private int totalprice;
     private boolean depositpaid;
     private JsonPlaceholder_BookingDatesPojo jsonPlaceholderBookingDatesPojo;
-    // daha once olusturdugumuz pojo kalibini datatype olarak belirterek yeni pojonun icerisine aktarmis oldum.
+    // daha once olusturdugumuz pojo kalibini dataType olarak belirterek yeni pojonun icerisine aktarmis olduk.
 
     // 2- getter setter
     public String getFirstname() {
@@ -63,9 +63,11 @@ public class JsonPlaceholder_BookingPojo {
     }
 
     // 3- constructor(parametreli ve parametresiz)
+    // parametresiz constructor
     public JsonPlaceholder_BookingPojo() {
     }
 
+    // parametreli constructor
     public JsonPlaceholder_BookingPojo(String firstname, String lastname, int totalprice, boolean depositpaid, JsonPlaceholder_BookingDatesPojo jsonPlaceholderBookingDatesPojo) {
         this.firstname = firstname;
         this.lastname = lastname;
@@ -85,4 +87,5 @@ public class JsonPlaceholder_BookingPojo {
                 ", bookingDatesPojo=" + jsonPlaceholderBookingDatesPojo +
                 '}';
     }
+
 }

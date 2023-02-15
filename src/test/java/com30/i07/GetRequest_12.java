@@ -1,6 +1,6 @@
 package com30.i07;
 
-import com30.testBase.JsonPlaceHolderTestBase;
+import com30.baseUrls.JsonPlaceHolderBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -12,7 +12,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.*;
 
-public class GetRequest_12 extends JsonPlaceHolderTestBase {
+public class GetRequest_12 extends JsonPlaceHolderBaseUrl {
 /*
     https://jsonplaceholder.typicode.com/todos/2 url'ine bir istek gonderildiginde,
     status code : 200,

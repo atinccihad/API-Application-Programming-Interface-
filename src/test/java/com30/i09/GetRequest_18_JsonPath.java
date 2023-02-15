@@ -1,6 +1,6 @@
 package com30.i09;
 
-import com30.testBase.DummyResttapiexampleTestBase;
+import com30.baseUrls.DummyResttapiexampleBaseUrl;
 import com30.testData.DummyRestApiTestData;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
@@ -15,7 +15,7 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class GetRequest_18_JsonPath extends DummyResttapiexampleTestBase {
+public class GetRequest_18_JsonPath extends DummyResttapiexampleBaseUrl {
     /*
        https://dummy.restapiexample.com/api/v1/employees url'ine bir istek gonderildiginde,
        status code : 200,

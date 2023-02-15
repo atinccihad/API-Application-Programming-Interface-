@@ -1,11 +1,9 @@
 package com30.i09;
 
-import com30.testBase.DummyResttapiexampleTestBase;
+import com30.baseUrls.DummyResttapiexampleBaseUrl;
 import com30.testData.DummyRestApiTestData;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.hamcrest.Matcher;
-import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -17,7 +15,7 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.Matchers.hasSize;
 
 
-public class GetRequest_15_MatchersClass extends DummyResttapiexampleTestBase {
+public class GetRequest_15_MatchersClass extends DummyResttapiexampleBaseUrl {
     /*
        https://dummy.restapiexample.com/api/v1/employees url'ine bir istek gonderildiginde,
        status code : 200,

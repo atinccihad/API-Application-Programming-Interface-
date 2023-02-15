@@ -38,9 +38,11 @@ public class JsonPlaceholder_BookingResponsePojo {
     }
 
     // 3- constructor(parametreli ve parametresiz)
+    // parametresiz constructor
     public JsonPlaceholder_BookingResponsePojo() {
     }
 
+    // parametreli constructor
     public JsonPlaceholder_BookingResponsePojo(int bookingId, JsonPlaceholder_BookingPojo booking) {
         this.bookingId = bookingId;
         this.booking = booking;
@@ -54,4 +56,5 @@ public class JsonPlaceholder_BookingResponsePojo {
                 ", booking=" + booking +
                 '}';
     }
+
 }

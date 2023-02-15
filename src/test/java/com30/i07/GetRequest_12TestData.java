@@ -1,6 +1,6 @@
 package com30.i07;
 
-import com30.testBase.JsonPlaceHolderTestBase;
+import com30.baseUrls.JsonPlaceHolderBaseUrl;
 import com30.testData.JsonPlaceHolderTestData;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
@@ -14,7 +14,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
-public class GetRequest_12TestData extends JsonPlaceHolderTestBase {
+public class GetRequest_12TestData extends JsonPlaceHolderBaseUrl {
 
     @Test
     public void test() {

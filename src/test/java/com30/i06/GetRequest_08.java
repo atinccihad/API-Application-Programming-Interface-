@@ -1,6 +1,6 @@
 package com30.i06;
 
-import com30.testBase.RestfulBookerHerokuappTestBase;
+import com30.baseUrls.RestfulBookerHerokuappBaseUrl;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
@@ -8,7 +8,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.*;
 
-public class GetRequest_08 extends RestfulBookerHerokuappTestBase {
+public class GetRequest_08 extends RestfulBookerHerokuappBaseUrl {
     /*
     https://restful-booker.herokuapp.com/booking/5 url'ine,
     content type'i "application/json" olan get request'i yolladigimda

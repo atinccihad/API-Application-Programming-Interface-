@@ -1,6 +1,6 @@
 package com30.i11;
 
-import com30.testBase.JsonPlaceHolderTestBase;
+import com30.baseUrls.JsonPlaceHolderBaseUrl;
 import com30.testData.JsonPlaceHolderTestData;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
@@ -11,7 +11,7 @@ import org.junit.Test;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class PutRequest_01 extends JsonPlaceHolderTestBase {
+public class PutRequest_01 extends JsonPlaceHolderBaseUrl {
     /*
   https://jsonplaceholder.typicode.com/todos/198 URL'ine asgidaki body gonderildiginde,
   {
