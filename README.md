@@ -92,8 +92,8 @@ Client ve Server arasındaki iletişim, request ve response lar ile yapılır::<
 <br><h5>Not:</h5> Yanıt aldıktan sonra öncelikle status code kontrol ederiz. 
 <br><h5>Not:</h5> PATCH Request yapabilmeniz için yetkilendirilmiş olmanız gerekmektedir.
 <h3>DELETE Request Nasıl Çalışır?</h3>
-<br><h5>Not:</h5> Yanıt aldıktan sonra öncelikle status code kontrol ederiz.
-<br><h5>Not:</h5> DELETE Request yapabilmeniz için yetkilendirilmiş olmanız gerekmektedir.
+Not: Yanıt aldıktan sonra öncelikle status code kontrol ederiz.<br>
+Not: DELETE Request yapabilmeniz için yetkilendirilmiş olmanız gerekmektedir.<br>
 <h3>Postman‘de Testler Nasıl Yapılır ?</h3>
 <br>1) Tests’ e tıklanır 
 <br>2) Seçim
