@@ -1,5 +1,6 @@
 package com30.i13;
 
+import com.google.gson.Gson;
 import com30.baseUrls.DummyResttapiexampleBaseUrl;
 import com30.pojos.Data;
 import com30.pojos.DummyPojo;
@@ -65,5 +66,15 @@ public class GetRequestWithPojo_01 extends DummyResttapiexampleBaseUrl {
         assertEquals(expectedData.getData().getProfile_image(), actualData.getData().getProfile_image());
         // "message":"Successfully' Record has been fetched."
         assertEquals(expectedData.getMessage(), actualData.getMessage());
+         /*
+           Serialization Islemi : Java objesini json yapisina donusturme islemidir
+           Gson class'indan obje uretiyoruz
+           objeyi kullanarak  .toJson() methoduna actualData'mizi parametre olarak tanimlayarak
+           cikti alma, dogrulama vs islemleri gerceklestirebiliriz.
+         */
+        Gson gson = new Gson();
+        String jsonFromJava = gson.toJson(actualData);
+        System.out.println("jsonFromJava = " + jsonFromJava);
+
     }
 }
