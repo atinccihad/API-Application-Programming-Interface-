@@ -83,17 +83,17 @@ Client ve Server arasındaki iletişim, request ve response lar ile yapılır::<
 <br> B) REST API URL/Endpoint(Mandatory), Query Parameters (Sorgu Parametresi) ya da Path 
 <br> C) Headers‘da kullanılacak cevap formatını seçmek. XML ya da JSON (Optional) olabilir. 
 <h3>POST Request Nasıl Çalışır?</h3>
-<br>Note: Yanıt aldıktan sonra öncelikle status code kontrol ederiz.
-<br>Note: POST Request yapabilmeniz için yetkilendirilmiş olmanız gerekmektedir.
+<br><h5>Not:</h5> Yanıt aldıktan sonra öncelikle status code kontrol ederiz.
+<br><h5>Not:</h5> POST Request yapabilmeniz için yetkilendirilmiş olmanız gerekmektedir.
 <h3>PUT Request Nasıl Çalışır?</h3>
-<br>Note: Yanıt aldıktan sonra öncelikle status code kontrol ederiz.
-<br>Note: PUT Request yapabilmeniz için yetkilendirilmiş olmanız gerekmektedir.
+<br><h5>Not:</h5> Yanıt aldıktan sonra öncelikle status code kontrol ederiz.
+<br><h5>Not:</h5> PUT Request yapabilmeniz için yetkilendirilmiş olmanız gerekmektedir.
 <h3>PATCH Request Nasıl Çalışır?</h3>
-<br>Note: Yanıt aldıktan sonra öncelikle status code kontrol ederiz. 
-<br>Note: PATCH Request yapabilmeniz için yetkilendirilmiş olmanız gerekmektedir.
+<br><h5>Not:</h5> Yanıt aldıktan sonra öncelikle status code kontrol ederiz. 
+<br><h5>Not:</h5> PATCH Request yapabilmeniz için yetkilendirilmiş olmanız gerekmektedir.
 <h3>DELETE Request Nasıl Çalışır?</h3>
-<br>Note: Yanıt aldıktan sonra öncelikle status code kontrol ederiz.
-<br>Note: DELETE Request yapabilmeniz için yetkilendirilmiş olmanız gerekmektedir.
+<br><h5>Not:</h5> Yanıt aldıktan sonra öncelikle status code kontrol ederiz.
+<br><h5>Not:</h5> DELETE Request yapabilmeniz için yetkilendirilmiş olmanız gerekmektedir.
 <h3>Postman‘de Testler Nasıl Yapılır ?</h3>
 <br>1) Tests’ e tıklanır 
 <br>2) Seçim
