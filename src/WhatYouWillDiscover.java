@@ -1,5 +1,6 @@
 public class WhatYouWillLearn {
-    /*    API DERSİNDE NELER ÖĞRENILECEK?
+    /*
+     API DERSİNDE NELER ÖĞRENILECEK?
      * POSTMAN
 
      * Rest Assured: REST API'lerini test etmek ve doğrulamak için kullanılan
@@ -34,5 +35,6 @@ public class WhatYouWillLearn {
      * ObjectMapper: JSON ve POJO (Plain Old Java Objects) okuma ve yazma işlevlerinin yanı sıra
          dönüştürmeleri gerçekleştirmek için de kullanılır.
 
-     * API den alınan response'ları bilgisayara text dosyası olarak kaydetme ve doğrulama yapma.*/
+     * API den alınan response'ları bilgisayara text dosyası olarak kaydetme ve doğrulama yapma.
+     * */
 }
