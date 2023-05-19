@@ -30,18 +30,19 @@ public class GetRequestWithObjectMapper_02 extends RestfulBookerHerokuappBaseUrl
     }
     oldugunu Object Mapper kullanarak test ediniz.
      */
-
     @Test
     public void test() {
         specRestful.pathParams("first", "booking",
                 "second", 2);
 
-        String jsonData = "{\n" +
+        String jsonData = "" +
+                "{\n" +
                 "    \"firstname\": \"Mark\",\n" +
                 "    \"lastname\": \"Wilson\",\n" +
                 "    \"totalprice\": 845,\n" +
                 "    \"depositpaid\": false,\n" +
-                "    \"bookingdates\": {\n" +
+                "    \"bookingdates\": " +
+                "    {\n" +
                 "        \"checkin\": \"2020-12-03\",\n" +
                 "        \"checkout\": \"2022-06-21\"\n" +
                 "    },\n" +
