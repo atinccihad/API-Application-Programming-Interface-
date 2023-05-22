@@ -73,6 +73,8 @@ public class PostRequest_02 extends RestfulBookerHerokuappBaseUrl {
 
         // JsonPath
         JsonPath jsonPath = response.jsonPath();
+        System.out.println("----------------------- JsonPath object ----------------------------");
+        jsonPath.prettyPrint();
 
         assertEquals(expectedRequestData.getString("lastname")
                 , jsonPath.getString("booking.lastname"));
