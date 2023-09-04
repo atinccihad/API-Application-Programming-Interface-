@@ -7,6 +7,8 @@ public class AutomationexerciseTestData {
     public HashMap<String, Object> setupTestData() {
         HashMap<String, Object> expectedData = new HashMap<>();
         expectedData.put("statusCode", 200);
+        expectedData.put("wrongStatusCode", 405);
+
 
         return expectedData;
     }
