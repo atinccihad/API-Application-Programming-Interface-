@@ -26,7 +26,6 @@ public class Get14_ObjectMapper_Map extends JsonplaceholderBaseUrl {
 									    "completed": true
 									  }
      */
-
     @Test
     public void get14_Map() {
         // Set the Url
